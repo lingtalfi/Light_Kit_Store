@@ -1,0 +1,15 @@
+dependencies: 
+    Ling: 
+        - Bat
+        - CliTools
+        - Light
+        - Light_Database
+        - Light_Kit_Editor
+        - Light_MailStats
+        - Light_Mailer
+        - Light_PasswordProtector
+        - SimplePdoWrapper
+    
+
+post_install: 
+    map: true
