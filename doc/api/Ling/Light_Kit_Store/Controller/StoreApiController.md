@@ -77,4 +77,4 @@ See the source code of [Ling\Light_Kit_Store\Controller\StoreApiController](http
 
 SeeAlso
 ==============
-Previous class: [LightKitStoreApiFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory.md)<br>Next class: [StoreFrontController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreFrontController.md)<br>
+Previous class: [StoreHomeController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreHomeController.md)<br>Next class: [StoreBaseController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController.md)<br>

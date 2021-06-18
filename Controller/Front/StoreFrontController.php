@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Ling\Light_Kit_Store\Controller;
+namespace Ling\Light_Kit_Store\Front\Controller;
 
 
 use Ling\Light\Controller\LightController;

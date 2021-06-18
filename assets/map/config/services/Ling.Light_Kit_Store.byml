@@ -9,7 +9,19 @@ kit_store:
 
 
 
-
-
 kit_store_vars:
+    front_theme: theme1
     captchaKeys: []
+
+
+
+
+# --------------------------------------
+# hooks
+# --------------------------------------
+$vars.methods_collection:
+    -
+        method: setVar
+        args:
+            key: kit_store_vars
+            value: ${kit_store_vars}

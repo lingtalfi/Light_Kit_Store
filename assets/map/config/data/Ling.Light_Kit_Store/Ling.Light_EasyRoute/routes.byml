@@ -1,0 +1,6 @@
+Light_Kit_Store:
+    prefix: null
+    routes:
+        lks_route-home:
+            pattern: /
+            controller: Ling\Light_Kit_Store\Controller\Front\StoreHomeController->render

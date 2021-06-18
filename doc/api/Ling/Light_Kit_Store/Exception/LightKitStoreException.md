@@ -54,4 +54,4 @@ See the source code of [Ling\Light_Kit_Store\Exception\LightKitStoreException](h
 
 SeeAlso
 ==============
-Previous class: [StoreFrontController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreFrontController.md)<br>Next class: [LightKitStorePlanetInstaller](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Light_PlanetInstaller/LightKitStorePlanetInstaller.md)<br>
+Previous class: [StoreBaseController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController.md)<br>Next class: [LightKitStoreHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreHelper.md)<br>

@@ -6,13 +6,51 @@ namespace Ling\Light_Kit_Store\Light_PlanetInstaller;
 
 use Ling\CliTools\Output\OutputInterface;
 use Ling\Light_Database\Light_PlanetInstaller\LightDatabaseBasePlanetInstaller;
+use Ling\Light_EasyRoute\Helper\LightEasyRouteHelper;
 use Ling\Light_Kit_Editor\Service\LightKitEditorService;
+use Ling\Light_PlanetInstaller\PlanetInstaller\LightPlanetInstallerInit2HookInterface;
 
 /**
  * The LightKitStorePlanetInstaller class.
  */
-class LightKitStorePlanetInstaller extends LightDatabaseBasePlanetInstaller
+class LightKitStorePlanetInstaller extends LightDatabaseBasePlanetInstaller implements LightPlanetInstallerInit2HookInterface
 {
+
+
+    /**
+     * @implementation
+     */
+    public function init2(string $appDir, OutputInterface $output, array $options = []): void
+    {
+
+        $planetDotName = "Ling.Light_Kit_Store";
+
+        //--------------------------------------------
+        // routes
+        //--------------------------------------------
+        $output->write("$planetDotName: copying Ling.Light_EasyRoute routes to master...");
+        LightEasyRouteHelper::copyRoutesFromPluginToMaster($appDir, $planetDotName);
+        $output->write("<success>ok.</success>" . PHP_EOL);
+
+    }
+
+    /**
+     * @implementation
+     */
+    public function undoInit2(string $appDir, OutputInterface $output, array $options = []): void
+    {
+
+        $planetDotName = "Ling.Light_Kit_Store";
+
+        //--------------------------------------------
+        // routes
+        //--------------------------------------------
+        $output->write("$planetDotName: removing Ling.Light_EasyRoute routes from master...");
+        LightEasyRouteHelper::removeRoutesFromMaster($appDir, $planetDotName);
+        $output->write("<success>ok.</success>" . PHP_EOL);
+
+
+    }
 
 
     /**

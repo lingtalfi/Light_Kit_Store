@@ -4,10 +4,14 @@ dependencies:
         - CliTools
         - Light
         - Light_Database
+        - Light_EasyRoute
+        - Light_Kit
         - Light_Kit_Editor
         - Light_MailStats
         - Light_Mailer
         - Light_PasswordProtector
+        - Light_PlanetInstaller
+        - Light_Vars
         - SimplePdoWrapper
     
 

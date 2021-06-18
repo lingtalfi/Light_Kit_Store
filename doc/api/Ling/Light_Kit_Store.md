@@ -488,6 +488,11 @@ Table of contents
     - [LightKitStoreApiFactory::getInvoiceLineApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/getInvoiceLineApi.md) &ndash; Returns a CustomInvoiceLineApiInterface.
     - [LightKitStoreApiFactory::setPdoWrapper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/setPdoWrapper.md) &ndash; Sets the pdoWrapper.
     - [LightKitStoreApiFactory::setContainer](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/setContainer.md) &ndash; Sets the container.
+- [StoreHomeController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreHomeController.md) &ndash; The StoreHomeController class.
+    - [StoreHomeController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreHomeController/render.md) &ndash; Renders the home page, and returns the appropriate http response.
+    - [StoreBaseController::renderPage](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController/renderPage.md) &ndash; Renders the given page using the [kit service](https://github.com/lingtalfi/Light_Kit).
+    - LightController::__construct &ndash; Builds the LightController instance.
+    - LightController::setLight &ndash; Sets the light instance.
 - [StoreApiController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController.md) &ndash; The StoreApiController class.
     - [StoreApiController::registerWebsite](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/registerWebsite.md) &ndash; Registers a website to the store database, and returns an [alcp response](https://github.com/lingtalfi/Light_AjaxHandler/blob/master/doc/pages/alcp-response.md).
     - [StoreApiController::signUp](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/signUp.md) &ndash; Signs up a new user.
@@ -495,12 +500,16 @@ Table of contents
     - [StoreApiController::sendResetPasswordEmail](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/sendResetPasswordEmail.md) &ndash; Sends an email to the user, which contains a link to reset his/her password.
     - LightController::__construct &ndash; Builds the LightController instance.
     - LightController::setLight &ndash; Sets the light instance.
-- [StoreFrontController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreFrontController.md) &ndash; The StoreFrontController class.
-    - [StoreFrontController::index](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreFrontController/index.md) &ndash; Renders the store front page.
+- [StoreBaseController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController.md) &ndash; The StoreBaseController class.
+    - [StoreBaseController::renderPage](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController/renderPage.md) &ndash; Renders the given page using the [kit service](https://github.com/lingtalfi/Light_Kit).
     - LightController::__construct &ndash; Builds the LightController instance.
     - LightController::setLight &ndash; Sets the light instance.
 - [LightKitStoreException](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Exception/LightKitStoreException.md) &ndash; The LightKitStoreException class.
+- [LightKitStoreHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreHelper.md) &ndash; The LightKitStoreHelper class.
+    - [LightKitStoreHelper::getLightKitEditorFrontRelativeRootPath](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreHelper/getLightKitEditorFrontRelativeRootPath.md) &ndash; Returns the official light kit editor relative root path for the light kit store front.
 - [LightKitStorePlanetInstaller](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Light_PlanetInstaller/LightKitStorePlanetInstaller.md) &ndash; The LightKitStorePlanetInstaller class.
+    - [LightKitStorePlanetInstaller::init2](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Light_PlanetInstaller/LightKitStorePlanetInstaller/init2.md) &ndash; Executes the init 2 phase of the install command.
+    - [LightKitStorePlanetInstaller::undoInit2](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Light_PlanetInstaller/LightKitStorePlanetInstaller/undoInit2.md) &ndash; Undoes the init 2 phase.
     - [LightKitStorePlanetInstaller::init3](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Light_PlanetInstaller/LightKitStorePlanetInstaller/init3.md) &ndash; Executes the init 3 phase of the install command.
     - LightDatabaseBasePlanetInstaller::__construct &ndash; Builds the LightDatabaseBasePlanetInstaller instance.
     - LightDatabaseBasePlanetInstaller::undoInit3 &ndash; Undoes the init 3 phase.
@@ -523,10 +532,14 @@ Dependencies
 - [CliTools](https://github.com/lingtalfi/CliTools)
 - [Light](https://github.com/lingtalfi/Light)
 - [Light_Database](https://github.com/lingtalfi/Light_Database)
+- [Light_EasyRoute](https://github.com/lingtalfi/Light_EasyRoute)
+- [Light_Kit](https://github.com/lingtalfi/Light_Kit)
 - [Light_Kit_Editor](https://github.com/lingtalfi/Light_Kit_Editor)
 - [Light_MailStats](https://github.com/lingtalfi/Light_MailStats)
 - [Light_Mailer](https://github.com/lingtalfi/Light_Mailer)
 - [Light_PasswordProtector](https://github.com/lingtalfi/Light_PasswordProtector)
+- [Light_PlanetInstaller](https://github.com/lingtalfi/Light_PlanetInstaller)
+- [Light_Vars](https://github.com/lingtalfi/Light_Vars)
 - [SimplePdoWrapper](https://github.com/lingtalfi/SimplePdoWrapper)
 
 

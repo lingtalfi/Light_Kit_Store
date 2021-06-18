@@ -63,10 +63,22 @@ kit_store:
 
 
 
-
-
 kit_store_vars:
+    front_theme: theme1
     captchaKeys: []
+
+
+
+
+# --------------------------------------
+# hooks
+# --------------------------------------
+$vars.methods_collection:
+    -
+        method: setVar
+        args:
+            key: kit_store_vars
+            value: ${kit_store_vars}
 
 ```
 
@@ -76,6 +88,10 @@ History Log
 =============
 
 
+- 0.0.2 -- 2021-06-18
+
+    - add home controller
+  
 - 0.0.1 -- 2021-04-06
 
     - initial commit
