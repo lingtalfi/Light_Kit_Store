@@ -10,7 +10,7 @@ kit_store:
 
 
 kit_store_vars:
-    front_theme: theme1
+    front_theme: Ling.Light_Kit_Store/theme1
     captchaKeys: []
 
 
