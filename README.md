@@ -1,6 +1,6 @@
 Light_Kit_Store
 ===========
-2021-04-06 -> 2021-06-19
+2021-04-06 -> 2021-06-21
 
 
 
@@ -88,6 +88,10 @@ History Log
 =============
 
 
+- 0.0.4 -- 2021-06-21
+
+    - updated routes
+  
 - 0.0.3 -- 2021-06-19
 
     - fix functional typo in front_theme

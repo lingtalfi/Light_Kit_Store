@@ -1,6 +1,6 @@
 Ling/Light_Kit_Store
 ================
-2021-04-06 --> 2021-06-18
+2021-04-06 --> 2021-06-21
 
 
 
@@ -488,8 +488,28 @@ Table of contents
     - [LightKitStoreApiFactory::getInvoiceLineApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/getInvoiceLineApi.md) &ndash; Returns a CustomInvoiceLineApiInterface.
     - [LightKitStoreApiFactory::setPdoWrapper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/setPdoWrapper.md) &ndash; Sets the pdoWrapper.
     - [LightKitStoreApiFactory::setContainer](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/setContainer.md) &ndash; Sets the container.
+- [StoreAboutController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreAboutController.md) &ndash; The StoreAboutController class.
+    - [StoreAboutController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreAboutController/render.md) &ndash; Renders the home page, and returns the appropriate http response.
+    - [StoreBaseController::renderPage](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController/renderPage.md) &ndash; Renders the given page using the [kit service](https://github.com/lingtalfi/Light_Kit).
+    - LightController::__construct &ndash; Builds the LightController instance.
+    - LightController::setLight &ndash; Sets the light instance.
 - [StoreHomeController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreHomeController.md) &ndash; The StoreHomeController class.
     - [StoreHomeController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreHomeController/render.md) &ndash; Renders the home page, and returns the appropriate http response.
+    - [StoreBaseController::renderPage](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController/renderPage.md) &ndash; Renders the given page using the [kit service](https://github.com/lingtalfi/Light_Kit).
+    - LightController::__construct &ndash; Builds the LightController instance.
+    - LightController::setLight &ndash; Sets the light instance.
+- [StorePagesListController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StorePagesListController.md) &ndash; The StorePagesListController class.
+    - [StorePagesListController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StorePagesListController/render.md) &ndash; Renders the home page, and returns the appropriate http response.
+    - [StoreBaseController::renderPage](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController/renderPage.md) &ndash; Renders the given page using the [kit service](https://github.com/lingtalfi/Light_Kit).
+    - LightController::__construct &ndash; Builds the LightController instance.
+    - LightController::setLight &ndash; Sets the light instance.
+- [StoreWebsitesListController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreWebsitesListController.md) &ndash; The StoreWebsitesListController class.
+    - [StoreWebsitesListController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreWebsitesListController/render.md) &ndash; Renders the home page, and returns the appropriate http response.
+    - [StoreBaseController::renderPage](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController/renderPage.md) &ndash; Renders the given page using the [kit service](https://github.com/lingtalfi/Light_Kit).
+    - LightController::__construct &ndash; Builds the LightController instance.
+    - LightController::setLight &ndash; Sets the light instance.
+- [StoreWidgetsListController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreWidgetsListController.md) &ndash; The StoreWidgetsListController class.
+    - [StoreWidgetsListController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreWidgetsListController/render.md) &ndash; Renders the home page, and returns the appropriate http response.
     - [StoreBaseController::renderPage](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController/renderPage.md) &ndash; Renders the given page using the [kit service](https://github.com/lingtalfi/Light_Kit).
     - LightController::__construct &ndash; Builds the LightController instance.
     - LightController::setLight &ndash; Sets the light instance.

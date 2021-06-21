@@ -4,7 +4,7 @@
 
 The LightKitStorePlanetInstaller class
 ================
-2021-04-06 --> 2021-06-18
+2021-04-06 --> 2021-06-21
 
 
 

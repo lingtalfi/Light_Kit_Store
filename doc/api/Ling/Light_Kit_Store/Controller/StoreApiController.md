@@ -4,7 +4,7 @@
 
 The StoreApiController class
 ================
-2021-04-06 --> 2021-06-18
+2021-04-06 --> 2021-06-21
 
 
 
@@ -77,4 +77,4 @@ See the source code of [Ling\Light_Kit_Store\Controller\StoreApiController](http
 
 SeeAlso
 ==============
-Previous class: [StoreHomeController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreHomeController.md)<br>Next class: [StoreBaseController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController.md)<br>
+Previous class: [StoreWidgetsListController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreWidgetsListController.md)<br>Next class: [StoreBaseController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController.md)<br>
