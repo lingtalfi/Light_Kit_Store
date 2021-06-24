@@ -4,15 +4,22 @@
 namespace Ling\Light_Kit_Store\Controller;
 
 
+use Ling\Bat\ConvertTool;
+use Ling\Bat\DateTool;
 use Ling\Bat\HashTool;
 use Ling\Bat\HttpTool;
 use Ling\Bat\ValidationTool;
 use Ling\Light\Controller\LightController;
 use Ling\Light\Http\HttpJsonResponse;
 use Ling\Light\Http\HttpRequestInterface;
+use Ling\Light\Http\HttpResponse;
+use Ling\Light\Http\HttpResponseInterface;
+use Ling\Light_Kit_Store\Helper\LightKitStoreRememberMeHelper;
+use Ling\Light_Kit_Store\Helper\LightKitStoreUserHelper;
 use Ling\Light_Kit_Store\Service\LightKitStoreService;
 use Ling\Light_Mailer\Service\LightMailerService;
 use Ling\Light_MailStats\Service\LightMailStatsService;
+use Ling\Light_UserManager\Service\LightUserManagerService;
 use Ling\SimplePdoWrapper\Util\Where;
 
 
@@ -28,6 +35,73 @@ class StoreApiController extends LightController
 
 
     /**
+     * Executes the action given in the GET parameters and returns a response.
+     *
+     * The "action" parameter should be present in GET.
+     *
+     * This is designed as a hub/proxy for all the other methods of this class.
+     *
+     * It's basically the only method that we expose publicly.
+     *
+     *
+     *
+     * @param HttpRequestInterface $request
+     * @return HttpResponseInterface
+     */
+    public function execute(HttpRequestInterface $request): HttpResponseInterface
+    {
+        $action = $request->getGetValue("action", false) ?? "undefined";
+
+        switch ($action) {
+            case "registerWebsite":
+                return $this->registerWebsite($request);
+            case "signUp":
+                return $this->signUp($request);
+            case "signIn":
+                return $this->signIn($request);
+            case "resetPassword":
+                return $this->sendResetPasswordEmail($request);
+            case "disconnect":
+                return $this->disconnect($request);
+            default:
+                return new HttpResponse("Unknown action: $action.", 404);
+
+        }
+    }
+
+
+    //--------------------------------------------
+    //
+    //--------------------------------------------
+    /**
+     * Disconnects the user, and returns a successful @page(alcp response).
+     *
+     * @param HttpRequestInterface $request
+     * @return HttpJsonResponse
+     * @throws \Exception
+     */
+    private function disconnect(HttpRequestInterface $request): HttpJsonResponse
+    {
+        /**
+         * @var $_um LightUserManagerService
+         */
+        $_um = $this->getContainer()->get("user_manager");
+        $user = $_um->getOpenUser();
+
+
+        LightKitStoreRememberMeHelper::destroyTokenByValidUser($this->getContainer(), $user);
+
+        $user->disconnect();
+
+
+        return HttpJsonResponse::create([
+            "type" => "success",
+        ]);
+
+    }
+
+
+    /**
      * Registers a website to the store database, and returns an @page(alcp response).
      * work in progress...
      *
@@ -35,7 +109,7 @@ class StoreApiController extends LightController
      * @param HttpRequestInterface $request
      * @return HttpJsonResponse
      */
-    public function registerWebsite(HttpRequestInterface $request): HttpJsonResponse
+    private function registerWebsite(HttpRequestInterface $request): HttpJsonResponse
     {
 
         /**
@@ -77,7 +151,7 @@ class StoreApiController extends LightController
      * @param HttpRequestInterface $request
      * @return HttpJsonResponse
      */
-    public function signUp(HttpRequestInterface $request): HttpJsonResponse
+    private function signUp(HttpRequestInterface $request): HttpJsonResponse
     {
 
 
@@ -204,14 +278,21 @@ class StoreApiController extends LightController
      *
      * The response is an basic @page(alcp response).
      *
+     *
+     *
+     *
+     *
+     *
      * @param HttpRequestInterface $request
      * @return HttpJsonResponse
      */
-    public function signIn(HttpRequestInterface $request): HttpJsonResponse
+    private function signIn(HttpRequestInterface $request): HttpJsonResponse
     {
+
 
         $email = $request->getPostValue("email", false) ?? "";
         $password = $request->getPostValue("password", false) ?? "";
+        $rememberMe = ConvertTool::toBoolean($request->getPostValue("remember_me", false)) ?? false;
 
 
         $error = null;
@@ -246,6 +327,21 @@ class StoreApiController extends LightController
                             'token_first_connection_time' => $now,
                             'token_last_connection_time' => $now,
                         ]);
+
+
+                        /**
+                         * @var $_um LightUserManagerService
+                         */
+                        $_um = $this->getContainer()->get("user_manager");
+                        $user = $_um->getOpenUser();
+                        LightKitStoreUserHelper::setUserPropsFromRow($user, $res);
+                        $user->connect();
+
+
+                        if (true === $rememberMe) {
+                            $rememberMeToken = LightKitStoreRememberMeHelper::generateRememberMeToken();
+                            LightKitStoreRememberMeHelper::spreadTokenByValidUser($this->getContainer(), $user, $rememberMeToken);
+                        }
 
 
                     } else {
@@ -306,77 +402,72 @@ class StoreApiController extends LightController
      * @param HttpRequestInterface $request
      * @return HttpJsonResponse
      */
-    public function sendResetPasswordEmail(HttpRequestInterface $request): HttpJsonResponse
+    private function sendResetPasswordEmail(HttpRequestInterface $request): HttpJsonResponse
     {
-
         $email = $request->getPostValue("email", false);
-        $clientWebsite = $request->getPostValue("client_website", false);
-
         $error = null;
 
 
-        if (null !== $clientWebsite) {
-            if (null !== $email) {
+        if (null !== $email) {
+            /**
+             * @var $kit_store LightKitStoreService
+             */
+            $kit_store = $this->getContainer()->get("kit_store");
+
+            $userApi = $kit_store->getFactory()->getUserApi();
+            $res = $userApi->getUser(Where::inst()
+                ->key("email")->equals($email)
+            );
+
+            if (null !== $res) {
+
+
                 /**
-                 * @var $kit_store LightKitStoreService
+                 * @var $_m LightMailerService
                  */
-                $kit_store = $this->getContainer()->get("kit_store");
+                $_m = $this->getContainer()->get("mailer");
 
-                $userApi = $kit_store->getFactory()->getUserApi();
-                $res = $userApi->getUser(Where::inst()
-                    ->key("email")->equals($email)
-                );
 
-                if (null !== $res) {
+                try {
 
 
                     /**
-                     * @var $_m LightMailerService
+                     * @var $_ms LightMailStatsService
                      */
-                    $_m = $this->getContainer()->get("mailer");
-
-                    try {
-
-
-                        /**
-                         * @var $_ms LightMailStatsService
-                         */
-                        $_ms = $this->getContainer()->get("mail_stats");
-                        $trackerApi = $_ms->getFactory()->getTrackerApi();
-                        $trackerId = $trackerApi->insertTracker([
-                            "group" => "client-$clientWebsite",
-                            "name" => "link-reset_password",
-                            "url" => "",
-                        ]);
-                        azf($trackerId);
+                    $_ms = $this->getContainer()->get("mail_stats");
+                    $trackerApi = $_ms->getFactory()->getTrackerApi();
+                    $trackerId = $trackerApi->insertTracker([
+                        "group" => "kitstore",
+                        "name" => "link-reset_password",
+                        "url" => "",
+                        "date_sent" => DateTool::getMysqlDatetime(),
+                    ]);
+                    azf($trackerId);
 
 
-                        $nbSent = 1;
-                        $nbSent = $_m->send("Ling.Light_Kit_Store/reset_password", $email, [
-                            'vars' => [
-                                "fullDate" => date("Y-m-d H:i:s"),
-                                "link" => 0,
-                            ],
-                        ]);
+                    $nbSent = 1;
+                    $nbSent = $_m->send("Ling.Light_Kit_Store/reset_password", $email, [
+                        'vars' => [
+                            "fullDate" => date("Y-m-d H:i:s"),
+                            "link" => 0,
+                        ],
+                    ]);
 
 
-                        if ($nbSent > 0) {
+                    if ($nbSent > 0) {
 
-                        } else {
-                            $error = "The mail couldn't be sent: $email.";
-                        }
-                    } catch (\Exception $e) {
-                        $error = "Error with mailer: " . $e->getMessage();
+                    } else {
+                        $error = "The mail couldn't be sent: $email.";
                     }
-
-                } else {
-                    $error = "Unknown email: $email.";
+                } catch (\Exception $e) {
+                    $error = "Error with mailer: " . $e->getMessage();
                 }
+
             } else {
-                $error = "The email is missing.";
+                $error = "Unknown email: $email.";
             }
         } else {
-            $error = "The client_website is missing.";
+            $error = "The email is missing.";
         }
 
         if (null !== $error) {

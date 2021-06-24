@@ -1,6 +1,6 @@
 Light_Kit_Store, conception notes
 ================
-2021-05-04 -> 2021-06-15
+2021-05-04 -> 2021-06-24
 
 
 
@@ -57,6 +57,50 @@ The **front end** is basically the buyer's gui.
 The buyer can access his(/her) account, from where he can download the invoices for his purchases.
 
 The buyer can also rate a product that he purchased.
+
+
+
+The remember_me system
+-----------
+2021-06-24
+
+What we call the **remember_me system** is actually a "keep me signed in until I log out" system.
+
+To activate this system, the user must check the "keep me signed in until I log out" checkbox when he logs in.
+
+The idea with the **remember_me system** is to keep the user connected until he/she logs out.
+
+This way, he/she doesn't have to click the "sign in" button everytime he visits our website.
+
+
+Our implementation is the following:
+
+- when the user signs in successfully (and if he activated the **remember_me system**), we create a **remember_me token** (an arbitrary, unguessable string)
+  and put it in his cookies. We also store the same **remember_me** token in our database.
+  
+- once the user is logged in, we use a classical php session system to keep the user logged in.
+    We use the session duration default which is about 5 minutes.
+    This means after 5 minutes of inactiviy, the user is automatically logged out of the php session (but not from the **remember_me system** as you will see).
+  
+
+- if an user is invalid (for instanced logged out of the php session), we check if he has a **remember_me token** in his cookies.
+    If he doesn't, we do nothing.
+    If he does, we check if this token corresponds to an entry in our database.
+      If it does, we connect the user (i.e. start a new php session for him), and regenerate a new token, which we put both in 
+      the database and in the user cookies.
+      If the token doesn't match, we remove the token from the user cookies.
+        Note: at this step, some systems will give the user a strong warning (i.e. identity theft assumed), but we prefer 
+        to just remove the cookie silently.
+
+
+- when the user logs out, we remove the **remember_me token** from both the database and the cookies   
+  
+
+
+
+
+
+
 
 
 
@@ -188,7 +232,7 @@ The possible causes for errors are:
 
 The login process
 ----------
-2021-06-14 -> 2021-06-15
+2021-06-14 -> 2021-06-24
 
 
 **Client websites** can log-in their users to the **store** from their gui, using our backend api.
@@ -201,10 +245,12 @@ To sign in a user to our database, we use an [alcp request](https://github.com/l
 
 The request should contain the following parameters:
 
-- email
-- password
+- email: string="""
+- password: string=""
+- remember_me: bool=false
+- flash: bool=false
 
-All fields are filled with empty values if not defined.
+
 
 The possible causes for errors are:
 
@@ -214,6 +260,13 @@ The possible causes for errors are:
 A successful response returns the following fields:
 
 - token: the **token** to use to execute **token actions**
+
+
+
+If the **remember_me** flag is set to true, we generate a **remember_me token** and put it in the database and in the user cookies.
+See the [remember_me system section](#the-remember_me-system) for more info.
+
+
 
 
 
@@ -317,10 +370,26 @@ for "denied by the moderator". I can use status=**2** instead, if I want to temp
 
 
 
+Our user
+=========
+2021-06-24
+
+
+The **light kit store** planet uses the [Ling.Light_OpenUser](https://github.com/lingtalfi/Light_User/blob/master/doc/api/Ling/Light_User/LightOpenUser.md) class to represent all its users (in the php code).
+
+
+In the props, we put at least the following:
+
+- id
 
 
 
- 
+
+
+
+
+
+
 
 
 

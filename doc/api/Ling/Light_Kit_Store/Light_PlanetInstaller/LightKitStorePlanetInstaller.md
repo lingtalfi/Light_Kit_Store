@@ -4,7 +4,7 @@
 
 The LightKitStorePlanetInstaller class
 ================
-2021-04-06 --> 2021-06-21
+2021-04-06 --> 2021-06-24
 
 
 
@@ -67,4 +67,4 @@ See the source code of [Ling\Light_Kit_Store\Light_PlanetInstaller\LightKitStore
 
 SeeAlso
 ==============
-Previous class: [LightKitStoreHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreHelper.md)<br>Next class: [LightKitStoreService](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService.md)<br>
+Previous class: [LightKitStoreUserHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreUserHelper.md)<br>Next class: [LightKitStoreService](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService.md)<br>

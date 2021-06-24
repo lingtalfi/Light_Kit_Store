@@ -370,6 +370,21 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
         ], \PDO::FETCH_COLUMN);
     }
 
+    /**
+     * @implementation
+     */
+    public function getItemRsByUserId(string $userId): array
+    {
+        return $this->pdoWrapper->fetchAll("
+        select a.r from `$this->table` a
+        inner join lks_user_has_item h on h.item_id=a.id
+        inner join lks_user b on b.id=h.user_id
+        where b.id=:user_id
+        ", [
+            ":user_id" => $userId,
+        ], \PDO::FETCH_COLUMN);
+    }
+
 
 
     /**

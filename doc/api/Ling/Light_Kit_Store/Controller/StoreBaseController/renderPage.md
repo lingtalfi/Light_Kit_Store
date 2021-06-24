@@ -59,7 +59,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [StoreBaseController::renderPage](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreBaseController.php#L33-L37)
+See the source code for method [StoreBaseController::renderPage](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreBaseController.php#L34-L53)
 
 
 See Also

@@ -46,7 +46,7 @@ Returns [CustomLightKitStoreApiFactory](https://github.com/lingtalfi/Light_Kit_S
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::getFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L152-L164)
+See the source code for method [LightKitStoreService::getFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L222-L234)
 
 
 See Also
@@ -54,5 +54,5 @@ See Also
 
 The [LightKitStoreService](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService.md) class.
 
-Previous method: [registerWebsiteFromDirectory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/registerWebsiteFromDirectory.md)<br>Next method: [getPasswordProtector](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getPasswordProtector.md)<br>
+Previous method: [getApiUrl](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getApiUrl.md)<br>Next method: [getPasswordProtector](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getPasswordProtector.md)<br>
 

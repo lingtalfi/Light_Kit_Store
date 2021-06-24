@@ -4,7 +4,7 @@
 
 The StoreAboutController class
 ================
-2021-04-06 --> 2021-06-21
+2021-04-06 --> 2021-06-24
 
 
 
@@ -71,4 +71,4 @@ See the source code of [Ling\Light_Kit_Store\Controller\Front\StoreAboutControll
 
 SeeAlso
 ==============
-Previous class: [LightKitStoreApiFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory.md)<br>Next class: [StoreHomeController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreHomeController.md)<br>
+Previous class: [Store404Controller](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/Store404Controller.md)<br>Next class: [StoreHomeController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreHomeController.md)<br>

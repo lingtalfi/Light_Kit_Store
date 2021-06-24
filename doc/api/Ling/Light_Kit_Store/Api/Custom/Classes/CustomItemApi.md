@@ -4,7 +4,7 @@
 
 The CustomItemApi class
 ================
-2021-04-06 --> 2021-06-21
+2021-04-06 --> 2021-06-24
 
 
 
@@ -50,6 +50,7 @@ class <span class="pl-k">CustomItemApi</span> extends [ItemApi](https://github.c
     - public [ItemApi::getItemsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemsByUserId.md)(string $userId) : array
     - public [ItemApi::getItemIdsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdsByUserId.md)(string $userId) : array
     - public [ItemApi::getItemIdentifiersByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdentifiersByUserId.md)(string $userId) : array
+    - public [ItemApi::getItemRsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemRsByUserId.md)(string $userId) : array
     - public [ItemApi::getAllIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getAllIds.md)() : array
     - public [ItemApi::updateItemById](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/updateItemById.md)(int $id, array $item, ?array $extraWhere = [], ?array $markers = []) : void
     - public [ItemApi::updateItemByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/updateItemByProviderAndIdentifier.md)(string $provider, string $identifier, array $item, ?array $extraWhere = [], ?array $markers = []) : void
@@ -93,6 +94,7 @@ Methods
 - [ItemApi::getItemsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemsByUserId.md) &ndash; Returns the rows of the lks_item table bound to the given user id.
 - [ItemApi::getItemIdsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdsByUserId.md) &ndash; Returns an array of lks_item.id bound to the given user id.
 - [ItemApi::getItemIdentifiersByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdentifiersByUserId.md) &ndash; Returns an array of lks_item.identifier bound to the given user id.
+- [ItemApi::getItemRsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemRsByUserId.md) &ndash; Returns an array of lks_item.r bound to the given user id.
 - [ItemApi::getAllIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getAllIds.md) &ndash; Returns an array of all item ids.
 - [ItemApi::updateItemById](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/updateItemById.md) &ndash; Updates the item row identified by the given id.
 - [ItemApi::updateItemByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/updateItemByProviderAndIdentifier.md) &ndash; Updates the item row identified by the given provider and identifier.

@@ -51,7 +51,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [StoreBaseController::getKitPageRendererInstance](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreBaseController.php#L47-L61)
+See the source code for method [StoreBaseController::getKitPageRendererInstance](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreBaseController.php#L63-L77)
 
 
 See Also

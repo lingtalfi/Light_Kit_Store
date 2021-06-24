@@ -4,7 +4,7 @@
 
 The CustomUserApi class
 ================
-2021-04-06 --> 2021-06-21
+2021-04-06 --> 2021-06-24
 
 
 
@@ -31,6 +31,7 @@ class <span class="pl-k">CustomUserApi</span> extends [UserApi](https://github.c
 
 - Methods
     - public [__construct](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Classes/CustomUserApi/__construct.md)() : void
+    - public [getUserByRememberMeToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Classes/CustomUserApi/getUserByRememberMeToken.md)(string $rememberMeToken, ?mixed $default = null, ?bool $throwNotFoundEx = false) : mixed
 
 - Inherited methods
     - public [UserApi::insertUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/UserApi/insertUser.md)(array $user, ?bool $ignoreDuplicate = true, ?bool $returnRic = false) : mixed
@@ -63,6 +64,7 @@ Methods
 ==============
 
 - [CustomUserApi::__construct](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Classes/CustomUserApi/__construct.md) &ndash; Builds the CustomUserApi instance.
+- [CustomUserApi::getUserByRememberMeToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Classes/CustomUserApi/getUserByRememberMeToken.md) &ndash; Returns the user row identified by the given remember_me token.
 - [UserApi::insertUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/UserApi/insertUser.md) &ndash; Inserts the given user in the database.
 - [UserApi::insertUsers](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/UserApi/insertUsers.md) &ndash; Inserts the given user rows in the database.
 - [UserApi::fetchAll](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/UserApi/fetchAll.md) &ndash; Returns the rows corresponding to given components.

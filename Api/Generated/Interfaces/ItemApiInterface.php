@@ -262,6 +262,14 @@ interface ItemApiInterface
     public function getItemIdentifiersByUserId(string $userId): array;
 
 
+    /**
+     * Returns an array of lks_item.r bound to the given user id.
+     * @param string $userId
+     * @return array
+     */
+    public function getItemRsByUserId(string $userId): array;
+
+
 
 
     /**

@@ -16,3 +16,9 @@ Light_Kit_Store:
         lks_route-about:
             pattern: /about
             controller: Ling\Light_Kit_Store\Controller\Front\StoreAboutController->render
+        lks_route-api:
+            pattern: /api
+            controller: Ling\Light_Kit_Store\Controller\StoreApiController->execute
+        lks_route-404:
+            pattern: /404
+            controller: Ling\Light_Kit_Store\Controller\Front\Store404Controller->render

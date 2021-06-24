@@ -47,7 +47,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::registerWebsiteFromDirectory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L137-L144)
+See the source code for method [LightKitStoreService::registerWebsiteFromDirectory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L182-L189)
 
 
 See Also
@@ -55,5 +55,5 @@ See Also
 
 The [LightKitStoreService](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService.md) class.
 
-Previous method: [generateUserToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/generateUserToken.md)<br>Next method: [getFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getFactory.md)<br>
+Previous method: [prepareUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/prepareUser.md)<br>Next method: [getApiUrl](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getApiUrl.md)<br>
 

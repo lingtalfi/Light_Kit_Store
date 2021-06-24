@@ -1,6 +1,6 @@
 Ling/Light_Kit_Store
 ================
-2021-04-06 --> 2021-06-21
+2021-04-06 --> 2021-06-24
 
 
 
@@ -73,6 +73,7 @@ Table of contents
     - [ItemApi::getItemsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemsByUserId.md) &ndash; Returns the rows of the lks_item table bound to the given user id.
     - [ItemApi::getItemIdsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdsByUserId.md) &ndash; Returns an array of lks_item.id bound to the given user id.
     - [ItemApi::getItemIdentifiersByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdentifiersByUserId.md) &ndash; Returns an array of lks_item.identifier bound to the given user id.
+    - [ItemApi::getItemRsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemRsByUserId.md) &ndash; Returns an array of lks_item.r bound to the given user id.
     - [ItemApi::getAllIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getAllIds.md) &ndash; Returns an array of all item ids.
     - [ItemApi::updateItemById](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/updateItemById.md) &ndash; Updates the item row identified by the given id.
     - [ItemApi::updateItemByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/updateItemByProviderAndIdentifier.md) &ndash; Updates the item row identified by the given provider and identifier.
@@ -93,6 +94,7 @@ Table of contents
     - [LightKitStoreBaseApi::setContainer](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/LightKitStoreBaseApi/setContainer.md) &ndash; Sets the container.
 - [CustomUserApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Classes/CustomUserApi.md) &ndash; The CustomUserApi class.
     - [CustomUserApi::__construct](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Classes/CustomUserApi/__construct.md) &ndash; Builds the CustomUserApi instance.
+    - [CustomUserApi::getUserByRememberMeToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Classes/CustomUserApi/getUserByRememberMeToken.md) &ndash; Returns the user row identified by the given remember_me token.
     - [UserApi::insertUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/UserApi/insertUser.md) &ndash; Inserts the given user in the database.
     - [UserApi::insertUsers](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/UserApi/insertUsers.md) &ndash; Inserts the given user rows in the database.
     - [UserApi::fetchAll](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/UserApi/fetchAll.md) &ndash; Returns the rows corresponding to given components.
@@ -200,6 +202,7 @@ Table of contents
     - [ItemApiInterface::getItemsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/getItemsByUserId.md) &ndash; Returns the rows of the lks_item table bound to the given user id.
     - [ItemApiInterface::getItemIdsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/getItemIdsByUserId.md) &ndash; Returns an array of lks_item.id bound to the given user id.
     - [ItemApiInterface::getItemIdentifiersByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/getItemIdentifiersByUserId.md) &ndash; Returns an array of lks_item.identifier bound to the given user id.
+    - [ItemApiInterface::getItemRsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/getItemRsByUserId.md) &ndash; Returns an array of lks_item.r bound to the given user id.
     - [ItemApiInterface::getAllIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/getAllIds.md) &ndash; Returns an array of all item ids.
     - [ItemApiInterface::updateItemById](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/updateItemById.md) &ndash; Updates the item row identified by the given id.
     - [ItemApiInterface::updateItemByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/updateItemByProviderAndIdentifier.md) &ndash; Updates the item row identified by the given provider and identifier.
@@ -213,6 +216,7 @@ Table of contents
     - [ItemApiInterface::deleteItemByProvidersAndIdentifiers](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/deleteItemByProvidersAndIdentifiers.md) &ndash; Deletes the item rows identified by the given providers.
     - [ItemApiInterface::deleteItemByReferences](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/deleteItemByReferences.md) &ndash; Deletes the item rows identified by the given references.
 - [CustomUserApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserApiInterface.md) &ndash; The CustomUserApiInterface interface.
+    - [CustomUserApiInterface::getUserByRememberMeToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserApiInterface/getUserByRememberMeToken.md) &ndash; Returns the user row identified by the given remember_me token.
     - [UserApiInterface::insertUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserApiInterface/insertUser.md) &ndash; Inserts the given user in the database.
     - [UserApiInterface::insertUsers](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserApiInterface/insertUsers.md) &ndash; Inserts the given user rows in the database.
     - [UserApiInterface::fetchAll](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserApiInterface/fetchAll.md) &ndash; Returns the rows corresponding to given components.
@@ -313,6 +317,7 @@ Table of contents
     - [ItemApi::getItemsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemsByUserId.md) &ndash; Returns the rows of the lks_item table bound to the given user id.
     - [ItemApi::getItemIdsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdsByUserId.md) &ndash; Returns an array of lks_item.id bound to the given user id.
     - [ItemApi::getItemIdentifiersByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdentifiersByUserId.md) &ndash; Returns an array of lks_item.identifier bound to the given user id.
+    - [ItemApi::getItemRsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemRsByUserId.md) &ndash; Returns an array of lks_item.r bound to the given user id.
     - [ItemApi::getAllIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getAllIds.md) &ndash; Returns an array of all item ids.
     - [ItemApi::updateItemById](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/updateItemById.md) &ndash; Updates the item row identified by the given id.
     - [ItemApi::updateItemByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/updateItemByProviderAndIdentifier.md) &ndash; Updates the item row identified by the given provider and identifier.
@@ -431,6 +436,7 @@ Table of contents
     - [ItemApiInterface::getItemsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/getItemsByUserId.md) &ndash; Returns the rows of the lks_item table bound to the given user id.
     - [ItemApiInterface::getItemIdsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/getItemIdsByUserId.md) &ndash; Returns an array of lks_item.id bound to the given user id.
     - [ItemApiInterface::getItemIdentifiersByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/getItemIdentifiersByUserId.md) &ndash; Returns an array of lks_item.identifier bound to the given user id.
+    - [ItemApiInterface::getItemRsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/getItemRsByUserId.md) &ndash; Returns an array of lks_item.r bound to the given user id.
     - [ItemApiInterface::getAllIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/getAllIds.md) &ndash; Returns an array of all item ids.
     - [ItemApiInterface::updateItemById](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/updateItemById.md) &ndash; Updates the item row identified by the given id.
     - [ItemApiInterface::updateItemByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/ItemApiInterface/updateItemByProviderAndIdentifier.md) &ndash; Updates the item row identified by the given provider and identifier.
@@ -488,6 +494,11 @@ Table of contents
     - [LightKitStoreApiFactory::getInvoiceLineApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/getInvoiceLineApi.md) &ndash; Returns a CustomInvoiceLineApiInterface.
     - [LightKitStoreApiFactory::setPdoWrapper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/setPdoWrapper.md) &ndash; Sets the pdoWrapper.
     - [LightKitStoreApiFactory::setContainer](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/setContainer.md) &ndash; Sets the container.
+- [Store404Controller](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/Store404Controller.md) &ndash; The Store404Controller class.
+    - [Store404Controller::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/Store404Controller/render.md) &ndash; Renders the 404 page, and returns the appropriate http response.
+    - [StoreBaseController::renderPage](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController/renderPage.md) &ndash; Renders the given page using the [kit service](https://github.com/lingtalfi/Light_Kit).
+    - LightController::__construct &ndash; Builds the LightController instance.
+    - LightController::setLight &ndash; Sets the light instance.
 - [StoreAboutController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreAboutController.md) &ndash; The StoreAboutController class.
     - [StoreAboutController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreAboutController/render.md) &ndash; Renders the home page, and returns the appropriate http response.
     - [StoreBaseController::renderPage](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController/renderPage.md) &ndash; Renders the given page using the [kit service](https://github.com/lingtalfi/Light_Kit).
@@ -514,10 +525,7 @@ Table of contents
     - LightController::__construct &ndash; Builds the LightController instance.
     - LightController::setLight &ndash; Sets the light instance.
 - [StoreApiController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController.md) &ndash; The StoreApiController class.
-    - [StoreApiController::registerWebsite](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/registerWebsite.md) &ndash; Registers a website to the store database, and returns an [alcp response](https://github.com/lingtalfi/Light_AjaxHandler/blob/master/doc/pages/alcp-response.md).
-    - [StoreApiController::signUp](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/signUp.md) &ndash; Signs up a new user.
-    - [StoreApiController::signIn](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/signIn.md) &ndash; Signs in a user.
-    - [StoreApiController::sendResetPasswordEmail](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/sendResetPasswordEmail.md) &ndash; Sends an email to the user, which contains a link to reset his/her password.
+    - [StoreApiController::execute](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/execute.md) &ndash; Executes the action given in the GET parameters and returns a response.
     - LightController::__construct &ndash; Builds the LightController instance.
     - LightController::setLight &ndash; Sets the light instance.
 - [StoreBaseController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController.md) &ndash; The StoreBaseController class.
@@ -527,6 +535,15 @@ Table of contents
 - [LightKitStoreException](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Exception/LightKitStoreException.md) &ndash; The LightKitStoreException class.
 - [LightKitStoreHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreHelper.md) &ndash; The LightKitStoreHelper class.
     - [LightKitStoreHelper::getLightKitEditorFrontRelativeRootPath](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreHelper/getLightKitEditorFrontRelativeRootPath.md) &ndash; Returns the official light kit editor relative root path for the light kit store front.
+- [LightKitStoreRememberMeHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreRememberMeHelper.md) &ndash; The LightKitStoreRememberMeHelper class.
+    - [LightKitStoreRememberMeHelper::getRememberMeTokenFromCookies](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreRememberMeHelper/getRememberMeTokenFromCookies.md) &ndash; Returns the remember_me token from the cookies.
+    - [LightKitStoreRememberMeHelper::removeRememberMeTokenFromCookies](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreRememberMeHelper/removeRememberMeTokenFromCookies.md) &ndash; Removes the given remember me token from the cookies.
+    - [LightKitStoreRememberMeHelper::generateRememberMeToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreRememberMeHelper/generateRememberMeToken.md) &ndash; Generates a remember_me token.
+    - [LightKitStoreRememberMeHelper::spreadTokenByValidUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreRememberMeHelper/spreadTokenByValidUser.md) &ndash; Writes the given token to both the database and the user cookies.
+    - [LightKitStoreRememberMeHelper::destroyTokenByValidUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreRememberMeHelper/destroyTokenByValidUser.md) &ndash; Removes the user's token from both the database and the cookies.
+    - [LightKitStoreRememberMeHelper::getUserRowByToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreRememberMeHelper/getUserRowByToken.md) &ndash; Returns the user row corresponding to the given token, or null if there is no match.
+- [LightKitStoreUserHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreUserHelper.md) &ndash; The LightKitStoreUserHelper class.
+    - [LightKitStoreUserHelper::setUserPropsFromRow](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreUserHelper/setUserPropsFromRow.md) &ndash; Attaches the desired userRow key/value pairs to the user props.
 - [LightKitStorePlanetInstaller](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Light_PlanetInstaller/LightKitStorePlanetInstaller.md) &ndash; The LightKitStorePlanetInstaller class.
     - [LightKitStorePlanetInstaller::init2](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Light_PlanetInstaller/LightKitStorePlanetInstaller/init2.md) &ndash; Executes the init 2 phase of the install command.
     - [LightKitStorePlanetInstaller::undoInit2](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Light_PlanetInstaller/LightKitStorePlanetInstaller/undoInit2.md) &ndash; Undoes the init 2 phase.
@@ -540,9 +557,12 @@ Table of contents
     - [LightKitStoreService::setOptions](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/setOptions.md) &ndash; Sets the options.
     - [LightKitStoreService::getRecaptchaKey](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getRecaptchaKey.md) &ndash; Returns the recaptcha key corresponding to the given project, or an empty string if nothing matches.
     - [LightKitStoreService::generateUserToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/generateUserToken.md) &ndash; Generates a login token.
+    - [LightKitStoreService::prepareUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/prepareUser.md) &ndash; This is the callback for the user_manager->addPrepareUserCallback method.
     - [LightKitStoreService::registerWebsiteFromDirectory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/registerWebsiteFromDirectory.md) &ndash; Registers a website from a directory.
+    - [LightKitStoreService::getApiUrl](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getApiUrl.md) &ndash; Shortcut to the api url.
     - [LightKitStoreService::getFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getFactory.md) &ndash; Returns the factory for this plugin's api.
     - [LightKitStoreService::getPasswordProtector](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getPasswordProtector.md) &ndash; Returns a configured instance of LightPasswordProtector.
+    - [LightKitStoreService::onLightExceptionCaught](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/onLightExceptionCaught.md) &ndash; The onLightExceptionCaught method
 - [LightKitStoreItemInstallerInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/StoreItemInstaller/LightKitStoreItemInstallerInterface.md) &ndash; The LightKitStoreItemInstallerInterface interface.
 
 
@@ -550,15 +570,21 @@ Dependencies
 ============
 - [Bat](https://github.com/lingtalfi/Bat)
 - [CliTools](https://github.com/lingtalfi/CliTools)
+- [JAcpHep](https://github.com/lingtalfi/JAcpHep)
+- [JFormCollect](https://github.com/lingtalfi/JFormCollect)
 - [Light](https://github.com/lingtalfi/Light)
 - [Light_Database](https://github.com/lingtalfi/Light_Database)
 - [Light_EasyRoute](https://github.com/lingtalfi/Light_EasyRoute)
+- [Light_Events](https://github.com/lingtalfi/Light_Events)
 - [Light_Kit](https://github.com/lingtalfi/Light_Kit)
 - [Light_Kit_Editor](https://github.com/lingtalfi/Light_Kit_Editor)
 - [Light_MailStats](https://github.com/lingtalfi/Light_MailStats)
 - [Light_Mailer](https://github.com/lingtalfi/Light_Mailer)
 - [Light_PasswordProtector](https://github.com/lingtalfi/Light_PasswordProtector)
 - [Light_PlanetInstaller](https://github.com/lingtalfi/Light_PlanetInstaller)
+- [Light_ReverseRouter](https://github.com/lingtalfi/Light_ReverseRouter)
+- [Light_User](https://github.com/lingtalfi/Light_User)
+- [Light_UserManager](https://github.com/lingtalfi/Light_UserManager)
 - [Light_Vars](https://github.com/lingtalfi/Light_Vars)
 - [SimplePdoWrapper](https://github.com/lingtalfi/SimplePdoWrapper)
 

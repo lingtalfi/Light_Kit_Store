@@ -56,7 +56,7 @@ Returns string.
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::getRecaptchaKey](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L113-L117)
+See the source code for method [LightKitStoreService::getRecaptchaKey](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L120-L124)
 
 
 See Also

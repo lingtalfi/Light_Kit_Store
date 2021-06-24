@@ -4,7 +4,7 @@
 
 The LightKitStoreApiFactory class
 ================
-2021-04-06 --> 2021-06-21
+2021-04-06 --> 2021-06-24
 
 
 
@@ -85,4 +85,4 @@ See the source code of [Ling\Light_Kit_Store\Api\Generated\LightKitStoreApiFacto
 
 SeeAlso
 ==============
-Previous class: [UserHasItemApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserHasItemApiInterface.md)<br>Next class: [StoreAboutController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreAboutController.md)<br>
+Previous class: [UserHasItemApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserHasItemApiInterface.md)<br>Next class: [Store404Controller](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/Store404Controller.md)<br>

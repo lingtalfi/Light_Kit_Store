@@ -48,7 +48,7 @@ Returns string.
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::generateUserToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L127-L130)
+See the source code for method [LightKitStoreService::generateUserToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L134-L137)
 
 
 See Also
@@ -56,5 +56,5 @@ See Also
 
 The [LightKitStoreService](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService.md) class.
 
-Previous method: [getRecaptchaKey](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getRecaptchaKey.md)<br>Next method: [registerWebsiteFromDirectory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/registerWebsiteFromDirectory.md)<br>
+Previous method: [getRecaptchaKey](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getRecaptchaKey.md)<br>Next method: [prepareUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/prepareUser.md)<br>
 

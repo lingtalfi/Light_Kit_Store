@@ -25,3 +25,12 @@ $vars.methods_collection:
         args:
             key: kit_store_vars
             value: ${kit_store_vars}
+
+
+$user_manager.methods_collection:
+    -
+        method: addPrepareUserCallback
+        args:
+            callback:
+                instance: @service(kit_store)
+                callable_method: prepareUser

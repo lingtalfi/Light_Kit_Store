@@ -7,6 +7,7 @@ namespace Ling\Light_Kit_Store\Light_PlanetInstaller;
 use Ling\CliTools\Output\OutputInterface;
 use Ling\Light_Database\Light_PlanetInstaller\LightDatabaseBasePlanetInstaller;
 use Ling\Light_EasyRoute\Helper\LightEasyRouteHelper;
+use Ling\Light_Events\Helper\LightEventsHelper;
 use Ling\Light_Kit_Editor\Service\LightKitEditorService;
 use Ling\Light_PlanetInstaller\PlanetInstaller\LightPlanetInstallerInit2HookInterface;
 
@@ -32,6 +33,13 @@ class LightKitStorePlanetInstaller extends LightDatabaseBasePlanetInstaller impl
         LightEasyRouteHelper::copyRoutesFromPluginToMaster($appDir, $planetDotName);
         $output->write("<success>ok.</success>" . PHP_EOL);
 
+
+        //--------------------------------------------
+        // events
+        //--------------------------------------------
+        $output->write("$planetDotName: registering open events...");
+        LightEventsHelper::registerOpenEventByPlanet($this->container, $planetDotName);
+        $output->write("<success>ok.</success>" . PHP_EOL);
     }
 
     /**
@@ -49,7 +57,12 @@ class LightKitStorePlanetInstaller extends LightDatabaseBasePlanetInstaller impl
         LightEasyRouteHelper::removeRoutesFromMaster($appDir, $planetDotName);
         $output->write("<success>ok.</success>" . PHP_EOL);
 
-
+        //--------------------------------------------
+        // events
+        //--------------------------------------------
+        $output->write("$planetDotName: unregistering open events...");
+        LightEventsHelper::unregisterOpenEventByPlanet($this->container, $planetDotName);
+        $output->write("<success>ok.</success>" . PHP_EOL);
     }
 
 

@@ -16,7 +16,7 @@ Description
 ================
 
 
-public [StoreApiController::signUp](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/signUp.md)(Ling\Light\Http\HttpRequestInterface $request) : [HttpJsonResponse](https://github.com/lingtalfi/Light/blob/master/doc/api/Ling/Light/Http/HttpJsonResponse.md)
+private [StoreApiController::signUp](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/signUp.md)(Ling\Light\Http\HttpRequestInterface $request) : [HttpJsonResponse](https://github.com/lingtalfi/Light/blob/master/doc/api/Ling/Light/Http/HttpJsonResponse.md)
 
 
 
@@ -66,7 +66,7 @@ Returns [HttpJsonResponse](https://github.com/lingtalfi/Light/blob/master/doc/ap
 
 Source Code
 ===========
-See the source code for method [StoreApiController::signUp](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreApiController.php#L80-L197)
+See the source code for method [StoreApiController::signUp](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreApiController.php#L154-L271)
 
 
 See Also

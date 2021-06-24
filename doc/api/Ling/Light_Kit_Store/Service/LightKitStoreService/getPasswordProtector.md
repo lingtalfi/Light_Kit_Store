@@ -47,7 +47,7 @@ Returns [LightPasswordProtector](https://github.com/lingtalfi/Light_PasswordProt
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::getPasswordProtector](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L173-L181)
+See the source code for method [LightKitStoreService::getPasswordProtector](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L243-L251)
 
 
 See Also
@@ -55,5 +55,5 @@ See Also
 
 The [LightKitStoreService](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService.md) class.
 
-Previous method: [getFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getFactory.md)<br>Next method: [error](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/error.md)<br>
+Previous method: [getFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getFactory.md)<br>Next method: [onLightExceptionCaught](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/onLightExceptionCaught.md)<br>
 

@@ -58,7 +58,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::error](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L195-L198)
+See the source code for method [LightKitStoreService::error](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L299-L302)
 
 
 See Also
@@ -66,5 +66,5 @@ See Also
 
 The [LightKitStoreService](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService.md) class.
 
-Previous method: [getPasswordProtector](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getPasswordProtector.md)<br>
+Previous method: [onLightExceptionCaught](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/onLightExceptionCaught.md)<br>
 

@@ -1,6 +1,6 @@
 Light_Kit_Store
 ===========
-2021-04-06 -> 2021-06-21
+2021-04-06 -> 2021-06-24
 
 
 
@@ -53,19 +53,21 @@ Here is an example of the service configuration:
 ```yaml
 
 kit_store:
-  instance: Ling\Light_Kit_Store\Service\LightKitStoreService
-  methods:
-    setContainer:
-      container: @container()
-    setOptions:
-      options:
-        captchaKeys: ${kit_store_vars.captchaKeys}
+    instance: Ling\Light_Kit_Store\Service\LightKitStoreService
+    methods:
+        setContainer:
+            container: @container()
+        setOptions:
+            options:
+                captchaKeys: ${kit_store_vars.captcha_keys}
+                notFoundRoute: ${kit_store_vars.not_found_route}
 
 
 
 kit_store_vars:
-  front_theme: Ling.Light_Kit_Store/theme1
-  captchaKeys: []
+    front_theme: Ling.Light_Kit_Store/theme1
+    not_found_route: lks_route-404
+    captcha_keys: []
 
 
 
@@ -74,12 +76,24 @@ kit_store_vars:
 # hooks
 # --------------------------------------
 $vars.methods_collection:
-  -
-    method: setVar
-    args:
-      key: kit_store_vars
-      value: ${kit_store_vars}
+    -
+        method: setVar
+        args:
+            key: kit_store_vars
+            value: ${kit_store_vars}
 
+
+$user_manager.methods_collection:
+    -
+        method: addPrepareUserCallback
+        args:
+            callback:
+                instance: @service(kit_store)
+                callable_method: prepareUser
+#    -
+#        method: setSessionDuration
+#        args:
+#            sessionTime: 500
 ```
 
 
@@ -88,6 +102,10 @@ History Log
 =============
 
 
+- 0.0.5 -- 2021-06-24
+
+    - add route to api, and events to register
+  
 - 0.0.4 -- 2021-06-21
 
     - updated routes

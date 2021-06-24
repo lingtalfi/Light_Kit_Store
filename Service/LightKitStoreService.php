@@ -5,11 +5,18 @@ namespace Ling\Light_Kit_Store\Service;
 
 
 use Ling\Bat\HashTool;
+use Ling\Light\Events\LightEvent;
+use Ling\Light\Exception\LightException;
+use Ling\Light\Http\HttpRedirectResponse;
 use Ling\Light\ServiceContainer\LightServiceContainerInterface;
 use Ling\Light_Database\Service\LightDatabaseService;
 use Ling\Light_Kit_Store\Api\Custom\CustomLightKitStoreApiFactory;
 use Ling\Light_Kit_Store\Exception\LightKitStoreException;
+use Ling\Light_Kit_Store\Helper\LightKitStoreRememberMeHelper;
+use Ling\Light_Kit_Store\Helper\LightKitStoreUserHelper;
 use Ling\Light_PasswordProtector\Service\LightPasswordProtector;
+use Ling\Light_ReverseRouter\Service\LightReverseRouterService;
+use Ling\Light_User\LightOpenUser;
 
 
 /**
@@ -131,6 +138,44 @@ class LightKitStoreService
 
 
     /**
+     * This is the callback for the user_manager->addPrepareUserCallback method.
+     * You shouldn't use this method manually.
+     *
+     * What this does is it handles the remember_me system like this:
+     *
+     * - if the user is not connected, we check whether he has a remember_me token.
+     *      If he does,
+     *          if it's valid, we connect him, and regenerate a new remember_me token that
+     *              we store in the db and in the user cookies.
+     *          if it's not valid, we remove the token
+     *              Note: some systems will blame the user for identity theft, but we don't
+     *      If he doesn't have a remember_me token, this method does nothing.
+     *
+     *
+     *
+     *
+     * @param LightOpenUser $user
+     */
+    public function prepareUser(LightOpenUser $user)
+    {
+        if (false === $user->isValid()) {
+
+            $rememberMeToken = LightKitStoreRememberMeHelper::getRememberMeTokenFromCookies();
+            if (null !== $rememberMeToken) {
+                $userRow = LightKitStoreRememberMeHelper::getUserRowByToken($this->container, $rememberMeToken);
+
+                if (null === $userRow) {
+                    LightKitStoreRememberMeHelper::removeRememberMeTokenFromCookies();
+                } else {
+                    LightKitStoreUserHelper::setUserPropsFromRow($user, $userRow);
+                    $user->connect();
+                }
+            }
+        }
+    }
+
+
+    /**
      * Registers a website from a directory.
      * work in progress...
      */
@@ -141,6 +186,31 @@ class LightKitStoreService
          * todo: here... is the method name correct?
          * todo: here... is the method name correct?
          */
+    }
+
+
+    /**
+     * Shortcut to the api url.
+     *
+     * @param string $action
+     * @return string
+     * @throws \Exception
+     */
+    public function getApiUrl(string $action): string
+    {
+        /**
+         * @var $_rr LightReverseRouterService
+         */
+        $_rr = $this->container->get("reverse_router");
+        $useAbsolute = false;
+        $urlParams = [
+            /**
+             * Note that we try to keep the api store controller design such that the only GET parameter required is action.
+             * Other params should be passed via POST.
+             */
+            "action" => $action,
+        ];
+        return $_rr->getUrl("lks_route-api", $urlParams, $useAbsolute);
     }
 
 
@@ -180,6 +250,40 @@ class LightKitStoreService
         return $this->passwordProtector;
     }
 
+
+    //--------------------------------------------
+    // EVENTS
+    //--------------------------------------------
+    /**
+     *
+     * Handles the following light error codes in a special way:
+     *
+     * - 404: redirects the user to the "default page" defined in our service (which defaults to 404 page)
+     *
+     *
+     * @param LightEvent $event
+     * @throws \Exception
+     *
+     */
+    public function onLightExceptionCaught(LightEvent $event): void
+    {
+        $e = $event->getVar("exception");
+        if (true === $e instanceof LightException) {
+            if ("404" === $e->getLightErrorCode()) {
+                $redirectRoute = $this->options['notFoundRoute'] ?? null;
+                if (null !== $redirectRoute) {
+                    $urlParams = [];
+                    /**
+                     * @var $rr LightReverseRouterService
+                     */
+                    $rr = $this->container->get("reverse_router");
+                    $url = $rr->getUrl($redirectRoute, $urlParams, true);
+                    $response = HttpRedirectResponse::create($url);
+                    $event->setVar("httpResponse", $response);
+                }
+            }
+        }
+    }
 
 
 
