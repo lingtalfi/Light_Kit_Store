@@ -46,7 +46,7 @@ Returns [CustomUserApiInterface](https://github.com/lingtalfi/Light_Kit_Store/bl
 
 Source Code
 ===========
-See the source code for method [LightKitStoreApiFactory::getUserApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/LightKitStoreApiFactory.php#L70-L76)
+See the source code for method [LightKitStoreApiFactory::getUserApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/LightKitStoreApiFactory.php#L87-L93)
 
 
 See Also
@@ -54,5 +54,5 @@ See Also
 
 The [LightKitStoreApiFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory.md) class.
 
-Previous method: [getItemApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/getItemApi.md)<br>Next method: [getUserHasItemApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/getUserHasItemApi.md)<br>
+Previous method: [getItemApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/getItemApi.md)<br>Next method: [getUserRatesItemApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/getUserRatesItemApi.md)<br>
 

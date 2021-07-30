@@ -4,7 +4,7 @@
 
 The ItemApi class
 ================
-2021-04-06 --> 2021-06-24
+2021-04-06 --> 2021-07-30
 
 
 
@@ -45,10 +45,7 @@ class <span class="pl-k">ItemApi</span> extends [CustomLightKitStoreBaseApi](htt
     - public [getItemsKey2Value](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemsKey2Value.md)(string $key, string $value, $where, ?array $markers = []) : array
     - public [getItemIdByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdByProviderAndIdentifier.md)(string $provider, string $identifier, ?$default = null, ?bool $throwNotFoundEx = false) : string | mixed
     - public [getItemIdByReference](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdByReference.md)(string $reference, ?$default = null, ?bool $throwNotFoundEx = false) : string | mixed
-    - public [getItemsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemsByUserId.md)(string $userId) : array
-    - public [getItemIdsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdsByUserId.md)(string $userId) : array
-    - public [getItemIdentifiersByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdentifiersByUserId.md)(string $userId) : array
-    - public [getItemRsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemRsByUserId.md)(string $userId) : array
+    - public [getItemsByAuthorId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemsByAuthorId.md)(string $authorId, ?array $components = []) : array
     - public [getAllIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getAllIds.md)() : array
     - public [updateItemById](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/updateItemById.md)(int $id, array $item, ?array $extraWhere = [], ?array $markers = []) : void
     - public [updateItemByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/updateItemByProviderAndIdentifier.md)(string $provider, string $identifier, array $item, ?array $extraWhere = [], ?array $markers = []) : void
@@ -61,7 +58,9 @@ class <span class="pl-k">ItemApi</span> extends [CustomLightKitStoreBaseApi](htt
     - public [deleteItemByIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/deleteItemByIds.md)(array $ids) : void
     - public [deleteItemByProvidersAndIdentifiers](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/deleteItemByProvidersAndIdentifiers.md)(array $providers) : void
     - public [deleteItemByReferences](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/deleteItemByReferences.md)(array $references) : void
-    - private [fetchRoutine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/fetchRoutine.md)(string &$q, array &$markers, array $components) : array
+    - public [deleteItemByAuthorId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/deleteItemByAuthorId.md)(int $authorId) : void
+    - protected [getDefaultValues](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getDefaultValues.md)() : array
+    - protected [fetchRoutine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/fetchRoutine.md)(string &$q, array &$markers, array $components, ?array $options = []) : array
 
 - Inherited methods
     - public [LightKitStoreBaseApi::setPdoWrapper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/LightKitStoreBaseApi/setPdoWrapper.md)([Ling\SimplePdoWrapper\SimplePdoWrapperInterface](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface.md) $pdoWrapper) : void
@@ -92,10 +91,7 @@ Methods
 - [ItemApi::getItemsKey2Value](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemsKey2Value.md) &ndash; Returns an array of $key => $value from the item rows identified by the given [where conditions](https://github.com/lingtalfi/SimplePdoWrapper#the-where-conditions).
 - [ItemApi::getItemIdByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdByProviderAndIdentifier.md) &ndash; Returns the id of the lks_item table.
 - [ItemApi::getItemIdByReference](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdByReference.md) &ndash; Returns the id of the lks_item table.
-- [ItemApi::getItemsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemsByUserId.md) &ndash; Returns the rows of the lks_item table bound to the given user id.
-- [ItemApi::getItemIdsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdsByUserId.md) &ndash; Returns an array of lks_item.id bound to the given user id.
-- [ItemApi::getItemIdentifiersByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemIdentifiersByUserId.md) &ndash; Returns an array of lks_item.identifier bound to the given user id.
-- [ItemApi::getItemRsByUserId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemRsByUserId.md) &ndash; Returns an array of lks_item.r bound to the given user id.
+- [ItemApi::getItemsByAuthorId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getItemsByAuthorId.md) &ndash; Returns the rows of the lks_item matching the given authorId.
 - [ItemApi::getAllIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getAllIds.md) &ndash; Returns an array of all item ids.
 - [ItemApi::updateItemById](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/updateItemById.md) &ndash; Updates the item row identified by the given id.
 - [ItemApi::updateItemByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/updateItemByProviderAndIdentifier.md) &ndash; Updates the item row identified by the given provider and identifier.
@@ -108,6 +104,8 @@ Methods
 - [ItemApi::deleteItemByIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/deleteItemByIds.md) &ndash; Deletes the item rows identified by the given ids.
 - [ItemApi::deleteItemByProvidersAndIdentifiers](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/deleteItemByProvidersAndIdentifiers.md) &ndash; Deletes the item rows identified by the given providers.
 - [ItemApi::deleteItemByReferences](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/deleteItemByReferences.md) &ndash; Deletes the item rows identified by the given references.
+- [ItemApi::deleteItemByAuthorId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/deleteItemByAuthorId.md) &ndash; Deletes the item rows having the given author id.
+- [ItemApi::getDefaultValues](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/getDefaultValues.md) &ndash; Returns the array of default values for this instance.
 - [ItemApi::fetchRoutine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/ItemApi/fetchRoutine.md) &ndash; Appends the given components to the given query, and returns an array of options.
 - [LightKitStoreBaseApi::setPdoWrapper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/LightKitStoreBaseApi/setPdoWrapper.md) &ndash; Sets the pdoWrapper.
 - [LightKitStoreBaseApi::setContainer](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/LightKitStoreBaseApi/setContainer.md) &ndash; Sets the container.

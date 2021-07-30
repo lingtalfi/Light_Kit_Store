@@ -71,7 +71,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [UserApi::insertUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/UserApi.php#L42-L93)
+See the source code for method [UserApi::insertUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/UserApi.php#L43-L94)
 
 
 See Also

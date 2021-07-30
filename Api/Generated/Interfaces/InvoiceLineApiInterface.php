@@ -175,6 +175,19 @@ interface InvoiceLineApiInterface
 
 
 
+    /**
+     * Returns the rows of the lks_invoice_line matching the given invoiceId.
+     * The components is an array of [fetch all components](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/pages/fetch-all-components.md).
+     *
+     * @param string $invoiceId
+     * @param array $components
+     * @return array
+     */
+    public function getInvoiceLinesByInvoiceId(string $invoiceId, array $components = []): array;
+
+
+
+
 
 
 

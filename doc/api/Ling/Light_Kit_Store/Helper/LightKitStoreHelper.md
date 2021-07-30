@@ -4,7 +4,7 @@
 
 The LightKitStoreHelper class
 ================
-2021-04-06 --> 2021-06-24
+2021-04-06 --> 2021-07-30
 
 
 
@@ -52,4 +52,4 @@ See the source code of [Ling\Light_Kit_Store\Helper\LightKitStoreHelper](https:/
 
 SeeAlso
 ==============
-Previous class: [LightKitStoreException](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Exception/LightKitStoreException.md)<br>Next class: [LightKitStoreRememberMeHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreRememberMeHelper.md)<br>
+Previous class: [LightKitStoreException](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Exception/LightKitStoreException.md)<br>Next class: [LightKitStoreOptionHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreOptionHelper.md)<br>

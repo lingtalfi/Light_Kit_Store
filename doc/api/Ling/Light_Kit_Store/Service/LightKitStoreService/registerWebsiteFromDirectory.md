@@ -47,7 +47,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::registerWebsiteFromDirectory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L182-L189)
+See the source code for method [LightKitStoreService::registerWebsiteFromDirectory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L212-L219)
 
 
 See Also

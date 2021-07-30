@@ -3,8 +3,8 @@
 
 namespace Ling\Light_Kit_Store\Api\Generated\Classes;
 
-use Ling\SimplePdoWrapper\SimplePdoWrapper;
 use Ling\SimplePdoWrapper\Exception\SimplePdoWrapperQueryException;
+use Ling\SimplePdoWrapper\SimplePdoWrapper;
 use Ling\SimplePdoWrapper\Util\Columns;
 use Ling\SimplePdoWrapper\Util\Limit;
 use Ling\SimplePdoWrapper\Util\OrderBy;
@@ -38,13 +38,14 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function insertItem(array $item, bool $ignoreDuplicate = true, bool $returnRic = false)
     { 
 
         $errorInfo = null;
 
-
+        $item = array_replace($this->getDefaultValues(), $item);
 
         try {
 
@@ -94,6 +95,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function insertItems(array $items, bool $ignoreDuplicate = true, bool $returnRic = false)
     {
@@ -110,6 +112,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function fetchAll(array $components = []): array
     {
@@ -125,6 +128,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function fetch(array $components = [])
     {
@@ -140,6 +144,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getItemById(int $id, $default = null, bool $throwNotFoundEx = false)
     {
@@ -160,6 +165,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getItemByProviderAndIdentifier(string $provider, string $identifier, $default = null, bool $throwNotFoundEx = false)
     {
@@ -181,6 +187,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getItemByReference(string $reference, $default = null, bool $throwNotFoundEx = false)
     {
@@ -203,6 +210,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getItem($where, array $markers = [], $default = null, bool $throwNotFoundEx = false)
     {
@@ -229,6 +237,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getItems($where, array $markers = [])
     {
@@ -240,6 +249,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getItemsColumn(string $column, $where, array $markers = [])
     {
@@ -251,6 +261,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getItemsColumns($columns, $where, array $markers = [])
     {
@@ -266,6 +277,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getItemsKey2Value(string $key, string $value, $where, array $markers = [])
     {
@@ -277,6 +289,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getItemIdByProviderAndIdentifier(string $provider, string $identifier, $default = null, bool $throwNotFoundEx = false)
     {
@@ -300,6 +313,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getItemIdByReference(string $reference, $default = null, bool $throwNotFoundEx = false)
     {
@@ -324,71 +338,42 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
-    public function getItemsByUserId(string $userId): array
+    public function getItemsByAuthorId(string $authorId, array $components = []): array
     {
-        return $this->pdoWrapper->fetchAll("
-        select a.* from `$this->table` a
-        inner join lks_user_has_item h on h.item_id=a.id
-        where h.user_id=:user_id
-
-
-        ", [
-            ":user_id" => $userId,
+        $markers = [
+            ":author_id" => $authorId,
+        ];
+        $q = "
+        select * from `$this->table`
+        where `author_id`=:author_id
+        ";
+        $options = $this->fetchRoutine($q, $markers, $components, [
+            'whereKeyword' => 'and',
         ]);
+        $fetchStyle = null;
+        if (true === $options['singleColumn']) {
+            $fetchStyle = \PDO::FETCH_COLUMN;
+        }
+
+        return $this->pdoWrapper->fetchAll($q, $markers, $fetchStyle);
     }
+
+
+
+
+
+
+
+
+
 
 
 
     /**
      * @implementation
-     */
-    public function getItemIdsByUserId(string $userId): array
-    {
-        return $this->pdoWrapper->fetchAll("
-        select a.id from `$this->table` a
-        inner join lks_user_has_item h on h.item_id=a.id
-        inner join lks_user b on b.id=h.user_id
-        where b.id=:user_id
-        ", [
-            ":user_id" => $userId,
-        ], \PDO::FETCH_COLUMN);
-    }
-
-    /**
-     * @implementation
-     */
-    public function getItemIdentifiersByUserId(string $userId): array
-    {
-        return $this->pdoWrapper->fetchAll("
-        select a.identifier from `$this->table` a
-        inner join lks_user_has_item h on h.item_id=a.id
-        inner join lks_user b on b.id=h.user_id
-        where b.id=:user_id
-        ", [
-            ":user_id" => $userId,
-        ], \PDO::FETCH_COLUMN);
-    }
-
-    /**
-     * @implementation
-     */
-    public function getItemRsByUserId(string $userId): array
-    {
-        return $this->pdoWrapper->fetchAll("
-        select a.r from `$this->table` a
-        inner join lks_user_has_item h on h.item_id=a.id
-        inner join lks_user b on b.id=h.user_id
-        where b.id=:user_id
-        ", [
-            ":user_id" => $userId,
-        ], \PDO::FETCH_COLUMN);
-    }
-
-
-
-    /**
-     * @implementation
+     * @inheritDoc
      */
     public function getAllIds(): array
     { 
@@ -397,6 +382,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function updateItemById(int $id, array $item, array $extraWhere = [], array $markers = [])
     {
@@ -408,6 +394,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function updateItemByProviderAndIdentifier(string $provider, string $identifier, array $item, array $extraWhere = [], array $markers = [])
     {
@@ -420,6 +407,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function updateItemByReference(string $reference, array $item, array $extraWhere = [], array $markers = [])
     {
@@ -433,6 +421,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function updateItem(array $item, $where = null, array $markers = [])
     {
@@ -443,6 +432,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function delete($where = null, array $markers = [])
     {
@@ -452,6 +442,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function deleteItemById(int $id)
     {
@@ -463,6 +454,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function deleteItemByProviderAndIdentifier(string $provider, string $identifier)
     {
@@ -475,6 +467,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function deleteItemByReference(string $reference)
     {
@@ -488,6 +481,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function deleteItemByIds(array $ids)
     {
@@ -496,6 +490,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function deleteItemByProvidersAndIdentifiers(array $providers)
     {
@@ -504,6 +499,7 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function deleteItemByReferences(array $references)
     {
@@ -513,11 +509,48 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
 
 
 
+    /**
+     * @implementation
+     * @inheritDoc
+     */
+    public function deleteItemByAuthorId(int $authorId)
+    {
+        $this->pdoWrapper->delete($this->table, [
+            "author_id" => $authorId,
+        ]);
+    }
 
 
     //--------------------------------------------
     //
     //--------------------------------------------
+    /**
+     * Returns the array of default values for this instance.
+     *
+     * @overrideMe
+     * @return array
+     */
+    protected function getDefaultValues(): array
+    {
+        return [
+        
+            'id' => NULL,
+            'author_id' => '0',
+            'label' => '',
+            'reference' => '',
+            'item_type' => '0',
+            'provider' => '',
+            'identifier' => '',
+            'description' => '',
+            'post_datetime' => '2021-07-30 20:18:20',
+            'price_in_euro' => '0.0',
+            'screenshots' => '',
+            'status' => '0',
+            'front_importance' => '0',
+        
+        ];
+    }
+
     /**
      * Appends the given components to the given query, and returns an array of options.
      *
@@ -525,15 +558,23 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
      *
      * - singleColumn: bool, whether the singleColumn mode was triggered with the Columns component
      *
+     * Available options are:
+     * - whereKeyword: string=where, the where keyword to use in the query.
+     *
      *
      * @param string $q
      * @param array $markers
      * @param array $components
+     * @param array $options
      * @return array
      * @throws \Exception
      */
-    private function fetchRoutine(string &$q, array &$markers, array $components): array
+    protected function fetchRoutine(string &$q, array &$markers, array $components, array $options = []): array
     {
+
+        $whereKeyword = $options['whereKeyword'] ?? 'where';
+
+
         $sWhere = '';
         $sCols = '';
         $sOrderBy = '';
@@ -548,7 +589,9 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
                     $singleColumn = true;
                 }
             } elseif ($component instanceof Where) {
-                SimplePdoWrapper::addWhereSubStmt($sWhere, $markers, $component);
+                SimplePdoWrapper::addWhereSubStmt($sWhere, $markers, $component, [
+                    'whereKeyword' => $whereKeyword,
+                ]);
             } elseif ($component instanceof OrderBy) {
                 $sOrderBy .= PHP_EOL . ' ORDER BY ';
                 $component->apply($sOrderBy);
@@ -564,7 +607,9 @@ class ItemApi extends CustomLightKitStoreBaseApi implements ItemApiInterface
         }
 
 
-        $q = "select $sCols from `$this->table`";
+        if ('' === $q) {
+            $q = "select $sCols from `$this->table`";
+        }
         if ($sWhere) {
             $q .= $sWhere;
         }

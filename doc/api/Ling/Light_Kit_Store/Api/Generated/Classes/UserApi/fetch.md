@@ -51,7 +51,7 @@ Returns array.
 
 Source Code
 ===========
-See the source code for method [UserApi::fetch](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/UserApi.php#L129-L139)
+See the source code for method [UserApi::fetch](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/UserApi.php#L133-L143)
 
 
 See Also

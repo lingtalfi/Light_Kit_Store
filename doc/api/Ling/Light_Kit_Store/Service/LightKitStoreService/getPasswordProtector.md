@@ -47,7 +47,7 @@ Returns [LightPasswordProtector](https://github.com/lingtalfi/Light_PasswordProt
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::getPasswordProtector](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L243-L251)
+See the source code for method [LightKitStoreService::getPasswordProtector](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L273-L281)
 
 
 See Also

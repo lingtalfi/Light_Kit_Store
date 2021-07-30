@@ -54,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [InvoiceApiInterface::deleteInvoiceByInvoiceNumber](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Interfaces/InvoiceApiInterface.php#L293-L293)
+See the source code for method [InvoiceApiInterface::deleteInvoiceByInvoiceNumber](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Interfaces/InvoiceApiInterface.php#L295-L295)
 
 
 See Also

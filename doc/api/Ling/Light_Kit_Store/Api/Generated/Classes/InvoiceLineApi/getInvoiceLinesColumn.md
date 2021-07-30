@@ -63,7 +63,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [InvoiceLineApi::getInvoiceLinesColumn](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/InvoiceLineApi.php#L203-L208)
+See the source code for method [InvoiceLineApi::getInvoiceLinesColumn](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/InvoiceLineApi.php#L211-L216)
 
 
 See Also

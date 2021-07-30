@@ -3,8 +3,8 @@
 
 namespace Ling\Light_Kit_Store\Api\Generated\Classes;
 
-use Ling\SimplePdoWrapper\SimplePdoWrapper;
 use Ling\SimplePdoWrapper\Exception\SimplePdoWrapperQueryException;
+use Ling\SimplePdoWrapper\SimplePdoWrapper;
 use Ling\SimplePdoWrapper\Util\Columns;
 use Ling\SimplePdoWrapper\Util\Limit;
 use Ling\SimplePdoWrapper\Util\OrderBy;
@@ -38,13 +38,14 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function insertInvoiceLine(array $invoiceLine, bool $ignoreDuplicate = true, bool $returnRic = false)
     { 
 
         $errorInfo = null;
 
-
+        $invoiceLine = array_replace($this->getDefaultValues(), $invoiceLine);
 
         try {
 
@@ -94,6 +95,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function insertInvoiceLines(array $invoiceLines, bool $ignoreDuplicate = true, bool $returnRic = false)
     {
@@ -110,6 +112,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function fetchAll(array $components = []): array
     {
@@ -125,6 +128,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function fetch(array $components = [])
     {
@@ -140,6 +144,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getInvoiceLineById(int $id, $default = null, bool $throwNotFoundEx = false)
     {
@@ -162,6 +167,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getInvoiceLine($where, array $markers = [], $default = null, bool $throwNotFoundEx = false)
     {
@@ -188,6 +194,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getInvoiceLines($where, array $markers = [])
     {
@@ -199,6 +206,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getInvoiceLinesColumn(string $column, $where, array $markers = [])
     {
@@ -210,6 +218,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getInvoiceLinesColumns($columns, $where, array $markers = [])
     {
@@ -225,6 +234,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getInvoiceLinesKey2Value(string $key, string $value, $where, array $markers = [])
     {
@@ -236,12 +246,44 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
 
 
+    /**
+     * @implementation
+     * @inheritDoc
+     */
+    public function getInvoiceLinesByInvoiceId(string $invoiceId, array $components = []): array
+    {
+        $markers = [
+            ":invoice_id" => $invoiceId,
+        ];
+        $q = "
+        select * from `$this->table`
+        where `invoice_id`=:invoice_id
+        ";
+        $options = $this->fetchRoutine($q, $markers, $components, [
+            'whereKeyword' => 'and',
+        ]);
+        $fetchStyle = null;
+        if (true === $options['singleColumn']) {
+            $fetchStyle = \PDO::FETCH_COLUMN;
+        }
+
+        return $this->pdoWrapper->fetchAll($q, $markers, $fetchStyle);
+    }
+
+
+
+
+
+
+
+
 
 
 
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getAllIds(): array
     { 
@@ -250,6 +292,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function updateInvoiceLineById(int $id, array $invoiceLine, array $extraWhere = [], array $markers = [])
     {
@@ -263,6 +306,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function updateInvoiceLine(array $invoiceLine, $where = null, array $markers = [])
     {
@@ -273,6 +317,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function delete($where = null, array $markers = [])
     {
@@ -282,6 +327,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function deleteInvoiceLineById(int $id)
     {
@@ -295,6 +341,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function deleteInvoiceLineByIds(array $ids)
     {
@@ -306,6 +353,7 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function deleteInvoiceLineByInvoiceId(int $invoiceId)
     {
@@ -319,21 +367,49 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
     //
     //--------------------------------------------
     /**
+     * Returns the array of default values for this instance.
+     *
+     * @overrideMe
+     * @return array
+     */
+    protected function getDefaultValues(): array
+    {
+        return [
+        
+            'id' => NULL,
+            'invoice_id' => '0',
+            'product_reference' => '',
+            'product_name' => '',
+            'quantity' => '0',
+            'unit_price_in_euro' => '0.0',
+        
+        ];
+    }
+
+    /**
      * Appends the given components to the given query, and returns an array of options.
      *
      * The options are:
      *
      * - singleColumn: bool, whether the singleColumn mode was triggered with the Columns component
      *
+     * Available options are:
+     * - whereKeyword: string=where, the where keyword to use in the query.
+     *
      *
      * @param string $q
      * @param array $markers
      * @param array $components
+     * @param array $options
      * @return array
      * @throws \Exception
      */
-    private function fetchRoutine(string &$q, array &$markers, array $components): array
+    protected function fetchRoutine(string &$q, array &$markers, array $components, array $options = []): array
     {
+
+        $whereKeyword = $options['whereKeyword'] ?? 'where';
+
+
         $sWhere = '';
         $sCols = '';
         $sOrderBy = '';
@@ -348,7 +424,9 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
                     $singleColumn = true;
                 }
             } elseif ($component instanceof Where) {
-                SimplePdoWrapper::addWhereSubStmt($sWhere, $markers, $component);
+                SimplePdoWrapper::addWhereSubStmt($sWhere, $markers, $component, [
+                    'whereKeyword' => $whereKeyword,
+                ]);
             } elseif ($component instanceof OrderBy) {
                 $sOrderBy .= PHP_EOL . ' ORDER BY ';
                 $component->apply($sOrderBy);
@@ -364,7 +442,9 @@ class InvoiceLineApi extends CustomLightKitStoreBaseApi implements InvoiceLineAp
         }
 
 
-        $q = "select $sCols from `$this->table`";
+        if ('' === $q) {
+            $q = "select $sCols from `$this->table`";
+        }
         if ($sWhere) {
             $q .= $sWhere;
         }

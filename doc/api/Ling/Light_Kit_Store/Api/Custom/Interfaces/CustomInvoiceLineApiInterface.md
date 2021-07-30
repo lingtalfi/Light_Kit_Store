@@ -4,7 +4,7 @@
 
 The CustomInvoiceLineApiInterface class
 ================
-2021-04-06 --> 2021-06-24
+2021-04-06 --> 2021-07-30
 
 
 
@@ -35,6 +35,7 @@ abstract class <span class="pl-k">CustomInvoiceLineApiInterface</span> implement
     - abstract public [InvoiceLineApiInterface::getInvoiceLinesColumn](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/getInvoiceLinesColumn.md)(string $column, $where, ?array $markers = []) : array
     - abstract public [InvoiceLineApiInterface::getInvoiceLinesColumns](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/getInvoiceLinesColumns.md)($columns, $where, ?array $markers = []) : array
     - abstract public [InvoiceLineApiInterface::getInvoiceLinesKey2Value](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/getInvoiceLinesKey2Value.md)(string $key, string $value, $where, ?array $markers = []) : array
+    - abstract public [InvoiceLineApiInterface::getInvoiceLinesByInvoiceId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/getInvoiceLinesByInvoiceId.md)(string $invoiceId, ?array $components = []) : array
     - abstract public [InvoiceLineApiInterface::getAllIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/getAllIds.md)() : array
     - abstract public [InvoiceLineApiInterface::updateInvoiceLineById](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/updateInvoiceLineById.md)(int $id, array $invoiceLine, ?array $extraWhere = [], ?array $markers = []) : void
     - abstract public [InvoiceLineApiInterface::updateInvoiceLine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/updateInvoiceLine.md)(array $invoiceLine, ?$where = null, ?array $markers = []) : void
@@ -63,6 +64,7 @@ Methods
 - [InvoiceLineApiInterface::getInvoiceLinesColumn](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/getInvoiceLinesColumn.md) &ndash; identified by the given [where conditions](https://github.com/lingtalfi/SimplePdoWrapper#the-where-conditions).
 - [InvoiceLineApiInterface::getInvoiceLinesColumns](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/getInvoiceLinesColumns.md) &ndash; Returns a subset of the invoiceLine rows identified by the given [where conditions](https://github.com/lingtalfi/SimplePdoWrapper#the-where-conditions).
 - [InvoiceLineApiInterface::getInvoiceLinesKey2Value](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/getInvoiceLinesKey2Value.md) &ndash; Returns an array of $key => $value from the invoiceLine rows identified by the given [where conditions](https://github.com/lingtalfi/SimplePdoWrapper#the-where-conditions).
+- [InvoiceLineApiInterface::getInvoiceLinesByInvoiceId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/getInvoiceLinesByInvoiceId.md) &ndash; Returns the rows of the lks_invoice_line matching the given invoiceId.
 - [InvoiceLineApiInterface::getAllIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/getAllIds.md) &ndash; Returns an array of all invoiceLine ids.
 - [InvoiceLineApiInterface::updateInvoiceLineById](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/updateInvoiceLineById.md) &ndash; Updates the invoice line row identified by the given id.
 - [InvoiceLineApiInterface::updateInvoiceLine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface/updateInvoiceLine.md) &ndash; Updates the invoice line row.

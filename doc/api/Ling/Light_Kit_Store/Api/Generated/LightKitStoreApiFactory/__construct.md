@@ -46,7 +46,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightKitStoreApiFactory::__construct](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/LightKitStoreApiFactory.php#L45-L50)
+See the source code for method [LightKitStoreApiFactory::__construct](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/LightKitStoreApiFactory.php#L49-L54)
 
 
 See Also
@@ -54,5 +54,5 @@ See Also
 
 The [LightKitStoreApiFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory.md) class.
 
-Next method: [getItemApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/getItemApi.md)<br>
+Next method: [getAuthorApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/getAuthorApi.md)<br>
 

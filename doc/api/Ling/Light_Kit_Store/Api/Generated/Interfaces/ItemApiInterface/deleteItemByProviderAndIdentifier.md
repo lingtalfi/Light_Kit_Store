@@ -58,7 +58,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [ItemApiInterface::deleteItemByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Interfaces/ItemApiInterface.php#L371-L371)
+See the source code for method [ItemApiInterface::deleteItemByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Interfaces/ItemApiInterface.php#L353-L353)
 
 
 See Also

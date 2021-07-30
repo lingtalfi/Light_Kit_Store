@@ -51,7 +51,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [UserApiInterface::getAllIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Interfaces/UserApiInterface.php#L188-L188)
+See the source code for method [UserApiInterface::getAllIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Interfaces/UserApiInterface.php#L190-L190)
 
 
 See Also

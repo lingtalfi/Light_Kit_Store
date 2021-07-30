@@ -4,7 +4,7 @@
 
 The InvoiceApiInterface class
 ================
-2021-04-06 --> 2021-06-24
+2021-04-06 --> 2021-07-30
 
 
 
@@ -93,4 +93,4 @@ See the source code of [Ling\Light_Kit_Store\Api\Generated\Interfaces\InvoiceApi
 
 SeeAlso
 ==============
-Previous class: [UserHasItemApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/UserHasItemApi.md)<br>Next class: [InvoiceLineApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface.md)<br>
+Previous class: [AuthorApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/AuthorApiInterface.md)<br>Next class: [InvoiceLineApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/InvoiceLineApiInterface.md)<br>

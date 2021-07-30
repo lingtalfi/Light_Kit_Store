@@ -62,7 +62,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [InvoiceLineApi::updateInvoiceLine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/InvoiceLineApi.php#L267-L270)
+See the source code for method [InvoiceLineApi::updateInvoiceLine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/InvoiceLineApi.php#L311-L314)
 
 
 See Also

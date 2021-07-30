@@ -7,7 +7,7 @@ StorePagesListController::render
 
 
 
-StorePagesListController::render — Renders the home page, and returns the appropriate http response.
+StorePagesListController::render — Renders the pages list page, and returns the appropriate http response.
 
 
 
@@ -21,7 +21,7 @@ public [StorePagesListController::render](https://github.com/lingtalfi/Light_Kit
 
 
 
-Renders the home page, and returns the appropriate http response.
+Renders the pages list page, and returns the appropriate http response.
 
 
 
@@ -49,7 +49,7 @@ Returns [HttpResponseInterface](https://github.com/lingtalfi/Light/blob/master/d
 
 Source Code
 ===========
-See the source code for method [StorePagesListController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/Front/StorePagesListController.php#L25-L28)
+See the source code for method [StorePagesListController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/Front/StorePagesListController.php#L24-L36)
 
 
 See Also

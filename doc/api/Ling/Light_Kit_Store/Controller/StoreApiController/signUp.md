@@ -38,7 +38,6 @@ The expected parameters for the request are:
 - password
 - password_confirm
 - g-recaptcha-response
-- project_name
 
 
 
@@ -66,7 +65,7 @@ Returns [HttpJsonResponse](https://github.com/lingtalfi/Light/blob/master/doc/ap
 
 Source Code
 ===========
-See the source code for method [StoreApiController::signUp](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreApiController.php#L154-L271)
+See the source code for method [StoreApiController::signUp](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreApiController.php#L384-L577)
 
 
 See Also

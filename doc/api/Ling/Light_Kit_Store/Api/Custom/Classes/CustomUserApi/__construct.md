@@ -46,7 +46,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [CustomUserApi::__construct](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Custom/Classes/CustomUserApi.php#L21-L24)
+See the source code for method [CustomUserApi::__construct](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Custom/Classes/CustomUserApi.php#L23-L26)
 
 
 See Also
@@ -54,5 +54,5 @@ See Also
 
 The [CustomUserApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Classes/CustomUserApi.md) class.
 
-Next method: [getUserByRememberMeToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Classes/CustomUserApi/getUserByRememberMeToken.md)<br>
+Next method: [getUserByToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Classes/CustomUserApi/getUserByToken.md)<br>
 

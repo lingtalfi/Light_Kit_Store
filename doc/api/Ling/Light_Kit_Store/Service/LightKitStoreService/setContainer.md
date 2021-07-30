@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::setContainer](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L92-L95)
+See the source code for method [LightKitStoreService::setContainer](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L94-L97)
 
 
 See Also

@@ -65,7 +65,7 @@ Returns string | mixed.
 
 Source Code
 ===========
-See the source code for method [ItemApi::getItemIdByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/ItemApi.php#L281-L297)
+See the source code for method [ItemApi::getItemIdByProviderAndIdentifier](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/ItemApi.php#L294-L310)
 
 
 See Also

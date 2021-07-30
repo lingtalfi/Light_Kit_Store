@@ -7,7 +7,7 @@ StoreWebsitesListController::render
 
 
 
-StoreWebsitesListController::render — Renders the home page, and returns the appropriate http response.
+StoreWebsitesListController::render — Renders the websites list page, and returns the appropriate http response.
 
 
 
@@ -21,7 +21,7 @@ public [StoreWebsitesListController::render](https://github.com/lingtalfi/Light_
 
 
 
-Renders the home page, and returns the appropriate http response.
+Renders the websites list page, and returns the appropriate http response.
 
 
 
@@ -49,7 +49,7 @@ Returns [HttpResponseInterface](https://github.com/lingtalfi/Light/blob/master/d
 
 Source Code
 ===========
-See the source code for method [StoreWebsitesListController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/Front/StoreWebsitesListController.php#L25-L28)
+See the source code for method [StoreWebsitesListController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/Front/StoreWebsitesListController.php#L24-L36)
 
 
 See Also

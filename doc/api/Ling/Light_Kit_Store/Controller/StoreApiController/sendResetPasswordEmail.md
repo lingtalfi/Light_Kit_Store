@@ -32,7 +32,6 @@ This is a [alcp service](https://github.com/lingtalfi/TheBar/blob/master/discuss
 Expected request parameters:
 
 - email
-- client_website (an identifier of the client website sending the request)
 
 Possible errors:
 
@@ -65,7 +64,7 @@ Returns [HttpJsonResponse](https://github.com/lingtalfi/Light/blob/master/doc/ap
 
 Source Code
 ===========
-See the source code for method [StoreApiController::sendResetPasswordEmail](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreApiController.php#L405-L487)
+See the source code for method [StoreApiController::sendResetPasswordEmail](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreApiController.php#L729-L823)
 
 
 See Also

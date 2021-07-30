@@ -7,7 +7,7 @@ LightKitStoreService::generateUserToken
 
 
 
-LightKitStoreService::generateUserToken — Generates a login token.
+LightKitStoreService::generateUserToken — Generates a token.
 
 
 
@@ -21,7 +21,7 @@ public [LightKitStoreService::generateUserToken](https://github.com/lingtalfi/Li
 
 
 
-Generates a login token.
+Generates a token.
 
 See the [Light_Kit_Store conception notes](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/pages/conception-notes.md) for more details.
 
@@ -48,7 +48,7 @@ Returns string.
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::generateUserToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L134-L137)
+See the source code for method [LightKitStoreService::generateUserToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L161-L164)
 
 
 See Also

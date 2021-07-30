@@ -7,7 +7,7 @@ StoreWidgetsListController::render
 
 
 
-StoreWidgetsListController::render — Renders the home page, and returns the appropriate http response.
+StoreWidgetsListController::render — Renders the widgets list page, and returns the appropriate http response.
 
 
 
@@ -21,7 +21,7 @@ public [StoreWidgetsListController::render](https://github.com/lingtalfi/Light_K
 
 
 
-Renders the home page, and returns the appropriate http response.
+Renders the widgets list page, and returns the appropriate http response.
 
 
 
@@ -49,7 +49,7 @@ Returns [HttpResponseInterface](https://github.com/lingtalfi/Light/blob/master/d
 
 Source Code
 ===========
-See the source code for method [StoreWidgetsListController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/Front/StoreWidgetsListController.php#L25-L28)
+See the source code for method [StoreWidgetsListController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/Front/StoreWidgetsListController.php#L24-L36)
 
 
 See Also

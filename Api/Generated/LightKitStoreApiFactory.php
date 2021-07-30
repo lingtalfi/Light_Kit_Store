@@ -6,16 +6,20 @@ namespace Ling\Light_Kit_Store\Api\Generated;
 
 use Ling\SimplePdoWrapper\SimplePdoWrapperInterface;
 use Ling\Light\ServiceContainer\LightServiceContainerInterface;
+use Ling\Light_Kit_Store\Api\Custom\Classes\CustomAuthorApi;
+use Ling\Light_Kit_Store\Api\Custom\Interfaces\CustomAuthorApiInterface;
 use Ling\Light_Kit_Store\Api\Custom\Classes\CustomItemApi;
 use Ling\Light_Kit_Store\Api\Custom\Interfaces\CustomItemApiInterface;
 use Ling\Light_Kit_Store\Api\Custom\Classes\CustomUserApi;
 use Ling\Light_Kit_Store\Api\Custom\Interfaces\CustomUserApiInterface;
-use Ling\Light_Kit_Store\Api\Custom\Classes\CustomUserHasItemApi;
-use Ling\Light_Kit_Store\Api\Custom\Interfaces\CustomUserHasItemApiInterface;
+use Ling\Light_Kit_Store\Api\Custom\Classes\CustomUserRatesItemApi;
+use Ling\Light_Kit_Store\Api\Custom\Interfaces\CustomUserRatesItemApiInterface;
 use Ling\Light_Kit_Store\Api\Custom\Classes\CustomInvoiceApi;
 use Ling\Light_Kit_Store\Api\Custom\Interfaces\CustomInvoiceApiInterface;
 use Ling\Light_Kit_Store\Api\Custom\Classes\CustomInvoiceLineApi;
 use Ling\Light_Kit_Store\Api\Custom\Interfaces\CustomInvoiceLineApiInterface;
+use Ling\Light_Kit_Store\Api\Custom\Classes\CustomUserPurchasesItemApi;
+use Ling\Light_Kit_Store\Api\Custom\Interfaces\CustomUserPurchasesItemApiInterface;
 
 
 
@@ -50,6 +54,19 @@ class LightKitStoreApiFactory
     }
 
     /**
+     * Returns a CustomAuthorApiInterface.
+     *
+     * @return CustomAuthorApiInterface
+     */
+    public function getAuthorApi(): CustomAuthorApiInterface
+    {
+        $o = new CustomAuthorApi();
+        $o->setPdoWrapper($this->pdoWrapper);
+        $o->setContainer($this->container);
+        return $o;
+    }
+
+    /**
      * Returns a CustomItemApiInterface.
      *
      * @return CustomItemApiInterface
@@ -76,13 +93,13 @@ class LightKitStoreApiFactory
     }
 
     /**
-     * Returns a CustomUserHasItemApiInterface.
+     * Returns a CustomUserRatesItemApiInterface.
      *
-     * @return CustomUserHasItemApiInterface
+     * @return CustomUserRatesItemApiInterface
      */
-    public function getUserHasItemApi(): CustomUserHasItemApiInterface
+    public function getUserRatesItemApi(): CustomUserRatesItemApiInterface
     {
-        $o = new CustomUserHasItemApi();
+        $o = new CustomUserRatesItemApi();
         $o->setPdoWrapper($this->pdoWrapper);
         $o->setContainer($this->container);
         return $o;
@@ -109,6 +126,19 @@ class LightKitStoreApiFactory
     public function getInvoiceLineApi(): CustomInvoiceLineApiInterface
     {
         $o = new CustomInvoiceLineApi();
+        $o->setPdoWrapper($this->pdoWrapper);
+        $o->setContainer($this->container);
+        return $o;
+    }
+
+    /**
+     * Returns a CustomUserPurchasesItemApiInterface.
+     *
+     * @return CustomUserPurchasesItemApiInterface
+     */
+    public function getUserPurchasesItemApi(): CustomUserPurchasesItemApiInterface
+    {
+        $o = new CustomUserPurchasesItemApi();
         $o->setPdoWrapper($this->pdoWrapper);
         $o->setContainer($this->container);
         return $o;

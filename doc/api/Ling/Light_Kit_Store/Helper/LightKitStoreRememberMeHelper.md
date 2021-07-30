@@ -4,7 +4,7 @@
 
 The LightKitStoreRememberMeHelper class
 ================
-2021-04-06 --> 2021-06-24
+2021-04-06 --> 2021-07-30
 
 
 
@@ -65,4 +65,4 @@ See the source code of [Ling\Light_Kit_Store\Helper\LightKitStoreRememberMeHelpe
 
 SeeAlso
 ==============
-Previous class: [LightKitStoreHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreHelper.md)<br>Next class: [LightKitStoreUserHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreUserHelper.md)<br>
+Previous class: [LightKitStorePriceHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStorePriceHelper.md)<br>Next class: [LightKitStoreThemeHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreThemeHelper.md)<br>

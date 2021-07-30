@@ -238,36 +238,18 @@ interface ItemApiInterface
 
 
     /**
-     * Returns the rows of the lks_item table bound to the given user id.
-     * @param string $userId
+     * Returns the rows of the lks_item matching the given authorId.
+     * The components is an array of [fetch all components](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/pages/fetch-all-components.md).
+     *
+     * @param string $authorId
+     * @param array $components
      * @return array
      */
-    public function getItemsByUserId(string $userId): array;
+    public function getItemsByAuthorId(string $authorId, array $components = []): array;
 
 
 
-    /**
-     * Returns an array of lks_item.id bound to the given user id.
-     * @param string $userId
-     * @return array
-     */
-    public function getItemIdsByUserId(string $userId): array;
 
-
-    /**
-     * Returns an array of lks_item.identifier bound to the given user id.
-     * @param string $userId
-     * @return array
-     */
-    public function getItemIdentifiersByUserId(string $userId): array;
-
-
-    /**
-     * Returns an array of lks_item.r bound to the given user id.
-     * @param string $userId
-     * @return array
-     */
-    public function getItemRsByUserId(string $userId): array;
 
 
 
@@ -411,5 +393,11 @@ interface ItemApiInterface
 
 
 
+
+    /**
+     * Deletes the item rows having the given author id.
+     * @param int $authorId
+     */
+    public function deleteItemByAuthorId(int $authorId);
 
 }

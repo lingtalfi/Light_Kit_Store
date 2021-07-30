@@ -56,7 +56,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::onLightExceptionCaught](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L268-L286)
+See the source code for method [LightKitStoreService::onLightExceptionCaught](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L298-L338)
 
 
 See Also

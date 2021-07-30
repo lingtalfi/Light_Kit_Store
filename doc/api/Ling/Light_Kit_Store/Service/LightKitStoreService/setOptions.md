@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::setOptions](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L103-L106)
+See the source code for method [LightKitStoreService::setOptions](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L105-L108)
 
 
 See Also
@@ -57,5 +57,5 @@ See Also
 
 The [LightKitStoreService](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService.md) class.
 
-Previous method: [setContainer](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/setContainer.md)<br>Next method: [getRecaptchaKey](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getRecaptchaKey.md)<br>
+Previous method: [setContainer](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/setContainer.md)<br>Next method: [getOption](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getOption.md)<br>
 

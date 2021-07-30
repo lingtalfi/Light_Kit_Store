@@ -16,7 +16,7 @@ Description
 ================
 
 
-public [LightKitStoreService::prepareUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/prepareUser.md)(Ling\Light_User\LightOpenUser $user) : void
+public [LightKitStoreService::prepareUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/prepareUser.md)(Ling\Light_User\LightUserInterface $user) : void
 
 
 
@@ -60,7 +60,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::prepareUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L159-L175)
+See the source code for method [LightKitStoreService::prepareUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L186-L205)
 
 
 See Also

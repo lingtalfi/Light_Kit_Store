@@ -16,7 +16,7 @@ Description
 ================
 
 
-private [UserApi::fetchRoutine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/UserApi/fetchRoutine.md)(string &$q, array &$markers, array $components) : array
+protected [UserApi::fetchRoutine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/UserApi/fetchRoutine.md)(string &$q, array &$markers, array $components, ?array $options = []) : array
 
 
 
@@ -26,6 +26,9 @@ Appends the given components to the given query, and returns an array of options
 The options are:
 
 - singleColumn: bool, whether the singleColumn mode was triggered with the Columns component
+
+Available options are:
+- whereKeyword: string=where, the where keyword to use in the query.
 
 
 
@@ -43,6 +46,10 @@ Parameters
     
 
 - components
+
+    
+
+- options
 
     
 
@@ -66,7 +73,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [UserApi::fetchRoutine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/UserApi.php#L326-L373)
+See the source code for method [UserApi::fetchRoutine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/UserApi.php#L385-L440)
 
 
 See Also
@@ -74,5 +81,5 @@ See Also
 
 The [UserApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/UserApi.md) class.
 
-Previous method: [deleteUserByIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/UserApi/deleteUserByIds.md)<br>
+Previous method: [getDefaultValues](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/UserApi/getDefaultValues.md)<br>
 

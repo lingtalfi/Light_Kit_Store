@@ -13,22 +13,40 @@ interface CustomUserApiInterface extends UserApiInterface
 {
 
     /**
-     * Returns the user row identified by the given remember_me token.
+     * Returns the user row identified by the given token.
      *
      *
      * If the row is not found, this method's return depends on the throwNotFoundEx flag:
      * - if true, the method throws an exception
      * - if false, the method returns the given default value
      *
+     * Token type can be one of:
+     * - remember_me
+     * - signup
+     * - reset_password
+     * - default
      *
-     * @param string $rememberMeToken
+     *
+     *
+     * @param string $token
+     * @param string $tokenType
      * @param mixed $default = null
      * @param bool $throwNotFoundEx = false
      * @return mixed
      * @throws \Exception
      */
-    public function getUserByRememberMeToken(string $rememberMeToken, mixed $default = null, bool $throwNotFoundEx = false);
+    public function getUserByToken(string $token, string $tokenType, mixed $default = null, bool $throwNotFoundEx = false);
 
+
+    /**
+     * Updates the user password with the given value.
+     * If the user is not connected, an exception is thrown.
+     *
+     *
+     * @param string $newPassword
+     * @throws \Exception
+     */
+    public function updatePassword(string $newPassword);
 
 
 }

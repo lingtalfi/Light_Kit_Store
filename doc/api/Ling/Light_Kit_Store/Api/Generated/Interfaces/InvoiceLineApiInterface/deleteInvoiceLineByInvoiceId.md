@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [InvoiceLineApiInterface::deleteInvoiceLineByInvoiceId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Interfaces/InvoiceLineApiInterface.php#L262-L262)
+See the source code for method [InvoiceLineApiInterface::deleteInvoiceLineByInvoiceId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Interfaces/InvoiceLineApiInterface.php#L275-L275)
 
 
 See Also

@@ -46,7 +46,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [CustomItemApi::__construct](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Custom/Classes/CustomItemApi.php#L21-L24)
+See the source code for method [CustomItemApi::__construct](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Custom/Classes/CustomItemApi.php#L26-L29)
 
 
 See Also
@@ -54,5 +54,5 @@ See Also
 
 The [CustomItemApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Classes/CustomItemApi.md) class.
 
-
+Next method: [getProductListItems](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Classes/CustomItemApi/getProductListItems.md)<br>
 

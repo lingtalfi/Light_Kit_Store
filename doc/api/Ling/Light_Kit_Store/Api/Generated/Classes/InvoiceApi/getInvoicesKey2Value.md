@@ -66,7 +66,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [InvoiceApi::getInvoicesKey2Value](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/InvoiceApi.php#L249-L254)
+See the source code for method [InvoiceApi::getInvoicesKey2Value](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/InvoiceApi.php#L260-L265)
 
 
 See Also

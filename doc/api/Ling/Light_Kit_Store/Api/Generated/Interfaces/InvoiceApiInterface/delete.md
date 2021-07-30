@@ -56,7 +56,7 @@ Returns false | int.
 
 Source Code
 ===========
-See the source code for method [InvoiceApiInterface::delete](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Interfaces/InvoiceApiInterface.php#L275-L275)
+See the source code for method [InvoiceApiInterface::delete](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Interfaces/InvoiceApiInterface.php#L277-L277)
 
 
 See Also

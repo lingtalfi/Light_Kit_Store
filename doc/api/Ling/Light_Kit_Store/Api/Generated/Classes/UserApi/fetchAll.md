@@ -50,7 +50,7 @@ Returns array.
 
 Source Code
 ===========
-See the source code for method [UserApi::fetchAll](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/UserApi.php#L114-L124)
+See the source code for method [UserApi::fetchAll](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/UserApi.php#L117-L127)
 
 
 See Also

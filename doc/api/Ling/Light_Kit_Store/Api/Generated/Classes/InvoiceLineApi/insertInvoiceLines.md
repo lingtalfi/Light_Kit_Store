@@ -71,7 +71,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [InvoiceLineApi::insertInvoiceLines](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/InvoiceLineApi.php#L98-L109)
+See the source code for method [InvoiceLineApi::insertInvoiceLines](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/InvoiceLineApi.php#L100-L111)
 
 
 See Also

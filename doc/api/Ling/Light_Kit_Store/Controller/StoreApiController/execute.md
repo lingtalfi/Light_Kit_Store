@@ -55,7 +55,7 @@ Returns [HttpResponseInterface](https://github.com/lingtalfi/Light/blob/master/d
 
 Source Code
 ===========
-See the source code for method [StoreApiController::execute](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreApiController.php#L51-L70)
+See the source code for method [StoreApiController::execute](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreApiController.php#L56-L104)
 
 
 See Also

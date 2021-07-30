@@ -54,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [StoreApiController::disconnect](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreApiController.php#L83-L101)
+See the source code for method [StoreApiController::disconnect](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreApiController.php#L117-L135)
 
 
 See Also
@@ -62,5 +62,5 @@ See Also
 
 The [StoreApiController](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController.md) class.
 
-Previous method: [execute](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/execute.md)<br>Next method: [registerWebsite](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/registerWebsite.md)<br>
+Previous method: [execute](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/execute.md)<br>Next method: [changePassword](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreApiController/changePassword.md)<br>
 

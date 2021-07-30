@@ -4,7 +4,7 @@
 
 The InvoiceApi class
 ================
-2021-04-06 --> 2021-06-24
+2021-04-06 --> 2021-07-30
 
 
 
@@ -52,7 +52,8 @@ class <span class="pl-k">InvoiceApi</span> extends [CustomLightKitStoreBaseApi](
     - public [deleteInvoiceByInvoiceNumber](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/InvoiceApi/deleteInvoiceByInvoiceNumber.md)(string $invoice_number) : void
     - public [deleteInvoiceByIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/InvoiceApi/deleteInvoiceByIds.md)(array $ids) : void
     - public [deleteInvoiceByInvoiceNumbers](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/InvoiceApi/deleteInvoiceByInvoiceNumbers.md)(array $invoice_numbers) : void
-    - private [fetchRoutine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/InvoiceApi/fetchRoutine.md)(string &$q, array &$markers, array $components) : array
+    - protected [getDefaultValues](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/InvoiceApi/getDefaultValues.md)() : array
+    - protected [fetchRoutine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/InvoiceApi/fetchRoutine.md)(string &$q, array &$markers, array $components, ?array $options = []) : array
 
 - Inherited methods
     - public [LightKitStoreBaseApi::setPdoWrapper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/LightKitStoreBaseApi/setPdoWrapper.md)([Ling\SimplePdoWrapper\SimplePdoWrapperInterface](https://github.com/lingtalfi/SimplePdoWrapper/blob/master/doc/api/Ling/SimplePdoWrapper/SimplePdoWrapperInterface.md) $pdoWrapper) : void
@@ -90,6 +91,7 @@ Methods
 - [InvoiceApi::deleteInvoiceByInvoiceNumber](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/InvoiceApi/deleteInvoiceByInvoiceNumber.md) &ndash; Deletes the invoice identified by the given invoice_number.
 - [InvoiceApi::deleteInvoiceByIds](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/InvoiceApi/deleteInvoiceByIds.md) &ndash; Deletes the invoice rows identified by the given ids.
 - [InvoiceApi::deleteInvoiceByInvoiceNumbers](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/InvoiceApi/deleteInvoiceByInvoiceNumbers.md) &ndash; Deletes the invoice rows identified by the given invoice_numbers.
+- [InvoiceApi::getDefaultValues](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/InvoiceApi/getDefaultValues.md) &ndash; Returns the array of default values for this instance.
 - [InvoiceApi::fetchRoutine](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/InvoiceApi/fetchRoutine.md) &ndash; Appends the given components to the given query, and returns an array of options.
 - [LightKitStoreBaseApi::setPdoWrapper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/LightKitStoreBaseApi/setPdoWrapper.md) &ndash; Sets the pdoWrapper.
 - [LightKitStoreBaseApi::setContainer](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/LightKitStoreBaseApi/setContainer.md) &ndash; Sets the container.
@@ -107,4 +109,4 @@ See the source code of [Ling\Light_Kit_Store\Api\Generated\Classes\InvoiceApi](h
 
 SeeAlso
 ==============
-Previous class: [CustomUserHasItemApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserHasItemApiInterface.md)<br>Next class: [InvoiceLineApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/InvoiceLineApi.md)<br>
+Previous class: [AuthorApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/AuthorApi.md)<br>Next class: [InvoiceLineApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Classes/InvoiceLineApi.md)<br>

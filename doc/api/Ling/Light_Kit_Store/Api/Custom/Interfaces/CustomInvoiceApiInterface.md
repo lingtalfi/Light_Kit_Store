@@ -4,7 +4,7 @@
 
 The CustomInvoiceApiInterface class
 ================
-2021-04-06 --> 2021-06-24
+2021-04-06 --> 2021-07-30
 
 
 
@@ -92,4 +92,4 @@ See the source code of [Ling\Light_Kit_Store\Api\Custom\Interfaces\CustomInvoice
 
 SeeAlso
 ==============
-Previous class: [CustomLightKitStoreApiFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/CustomLightKitStoreApiFactory.md)<br>Next class: [CustomInvoiceLineApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomInvoiceLineApiInterface.md)<br>
+Previous class: [CustomAuthorApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomAuthorApiInterface.md)<br>Next class: [CustomInvoiceLineApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomInvoiceLineApiInterface.md)<br>

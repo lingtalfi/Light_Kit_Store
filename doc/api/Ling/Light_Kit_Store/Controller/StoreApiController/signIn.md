@@ -53,7 +53,7 @@ Returns [HttpJsonResponse](https://github.com/lingtalfi/Light/blob/master/doc/ap
 
 Source Code
 ===========
-See the source code for method [StoreApiController::signIn](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreApiController.php#L289-L376)
+See the source code for method [StoreApiController::signIn](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Controller/StoreApiController.php#L595-L701)
 
 
 See Also

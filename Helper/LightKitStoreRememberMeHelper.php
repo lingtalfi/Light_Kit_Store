@@ -140,6 +140,6 @@ class LightKitStoreRememberMeHelper
         $kit_store = $container->get("kit_store");
 
         $userApi = $kit_store->getFactory()->getUserApi();
-        return $userApi->getUserByRememberMeToken($rememberMeToken);
+        return $userApi->getUserByToken($rememberMeToken, "remember_me");
     }
 }

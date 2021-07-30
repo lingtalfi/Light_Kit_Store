@@ -4,7 +4,7 @@
 
 The CustomUserApiInterface class
 ================
-2021-04-06 --> 2021-06-24
+2021-04-06 --> 2021-07-30
 
 
 
@@ -25,7 +25,8 @@ Class synopsis
 abstract class <span class="pl-k">CustomUserApiInterface</span> implements [UserApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserApiInterface.md) {
 
 - Methods
-    - abstract public [getUserByRememberMeToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserApiInterface/getUserByRememberMeToken.md)(string $rememberMeToken, ?mixed $default = null, ?bool $throwNotFoundEx = false) : mixed
+    - abstract public [getUserByToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserApiInterface/getUserByToken.md)(string $token, string $tokenType, ?mixed $default = null, ?bool $throwNotFoundEx = false) : mixed
+    - abstract public [updatePassword](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserApiInterface/updatePassword.md)(string $newPassword) : void
 
 - Inherited methods
     - abstract public [UserApiInterface::insertUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserApiInterface/insertUser.md)(array $user, ?bool $ignoreDuplicate = true, ?bool $returnRic = false) : mixed
@@ -55,7 +56,8 @@ abstract class <span class="pl-k">CustomUserApiInterface</span> implements [User
 Methods
 ==============
 
-- [CustomUserApiInterface::getUserByRememberMeToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserApiInterface/getUserByRememberMeToken.md) &ndash; Returns the user row identified by the given remember_me token.
+- [CustomUserApiInterface::getUserByToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserApiInterface/getUserByToken.md) &ndash; Returns the user row identified by the given token.
+- [CustomUserApiInterface::updatePassword](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserApiInterface/updatePassword.md) &ndash; Updates the user password with the given value.
 - [UserApiInterface::insertUser](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserApiInterface/insertUser.md) &ndash; Inserts the given user in the database.
 - [UserApiInterface::insertUsers](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserApiInterface/insertUsers.md) &ndash; Inserts the given user rows in the database.
 - [UserApiInterface::fetchAll](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserApiInterface/fetchAll.md) &ndash; Returns the rows corresponding to given components.
@@ -86,4 +88,4 @@ See the source code of [Ling\Light_Kit_Store\Api\Custom\Interfaces\CustomUserApi
 
 SeeAlso
 ==============
-Previous class: [CustomItemApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomItemApiInterface.md)<br>Next class: [CustomUserHasItemApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserHasItemApiInterface.md)<br>
+Previous class: [CustomItemApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomItemApiInterface.md)<br>Next class: [CustomUserPurchasesItemApiInterface](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserPurchasesItemApiInterface.md)<br>

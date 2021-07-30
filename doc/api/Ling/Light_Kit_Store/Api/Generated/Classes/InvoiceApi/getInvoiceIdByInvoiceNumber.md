@@ -61,7 +61,7 @@ Returns string | mixed.
 
 Source Code
 ===========
-See the source code for method [InvoiceApi::getInvoiceIdByInvoiceNumber](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/InvoiceApi.php#L260-L275)
+See the source code for method [InvoiceApi::getInvoiceIdByInvoiceNumber](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/InvoiceApi.php#L272-L287)
 
 
 See Also

@@ -3,8 +3,8 @@
 
 namespace Ling\Light_Kit_Store\Api\Generated\Classes;
 
-use Ling\SimplePdoWrapper\SimplePdoWrapper;
 use Ling\SimplePdoWrapper\Exception\SimplePdoWrapperQueryException;
+use Ling\SimplePdoWrapper\SimplePdoWrapper;
 use Ling\SimplePdoWrapper\Util\Columns;
 use Ling\SimplePdoWrapper\Util\Limit;
 use Ling\SimplePdoWrapper\Util\OrderBy;
@@ -38,13 +38,14 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function insertUser(array $user, bool $ignoreDuplicate = true, bool $returnRic = false)
     { 
 
         $errorInfo = null;
 
-
+        $user = array_replace($this->getDefaultValues(), $user);
 
         try {
 
@@ -94,6 +95,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function insertUsers(array $users, bool $ignoreDuplicate = true, bool $returnRic = false)
     {
@@ -110,6 +112,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function fetchAll(array $components = []): array
     {
@@ -125,6 +128,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function fetch(array $components = [])
     {
@@ -140,6 +144,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getUserById(int $id, $default = null, bool $throwNotFoundEx = false)
     {
@@ -162,6 +167,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getUser($where, array $markers = [], $default = null, bool $throwNotFoundEx = false)
     {
@@ -188,6 +194,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getUsers($where, array $markers = [])
     {
@@ -199,6 +206,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getUsersColumn(string $column, $where, array $markers = [])
     {
@@ -210,6 +218,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getUsersColumns($columns, $where, array $markers = [])
     {
@@ -225,6 +234,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getUsersKey2Value(string $key, string $value, $where, array $markers = [])
     {
@@ -240,8 +250,11 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
 
 
+
+
     /**
      * @implementation
+     * @inheritDoc
      */
     public function getAllIds(): array
     { 
@@ -250,6 +263,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function updateUserById(int $id, array $user, array $extraWhere = [], array $markers = [])
     {
@@ -263,6 +277,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function updateUser(array $user, $where = null, array $markers = [])
     {
@@ -273,6 +288,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function delete($where = null, array $markers = [])
     {
@@ -282,6 +298,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function deleteUserById(int $id)
     {
@@ -295,6 +312,7 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
 
     /**
      * @implementation
+     * @inheritDoc
      */
     public function deleteUserByIds(array $ids)
     {
@@ -310,21 +328,66 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
     //
     //--------------------------------------------
     /**
+     * Returns the array of default values for this instance.
+     *
+     * @overrideMe
+     * @return array
+     */
+    protected function getDefaultValues(): array
+    {
+        return [
+        
+            'id' => NULL,
+            'email' => '',
+            'password' => '',
+            'creation_time' => '2021-07-30 20:18:21',
+            'company' => '',
+            'first_name' => '',
+            'last_name' => '',
+            'address' => '',
+            'zip_postal_code' => '',
+            'city' => '',
+            'state_province_region' => '',
+            'country' => '',
+            'phone' => '',
+            'rating_name' => '',
+            'token' => '',
+            'token_first_connection_time' => NULL,
+            'token_last_connection_time' => NULL,
+            'reset_password_token' => '',
+            'reset_password_token_time' => NULL,
+            'remember_me_token' => NULL,
+            'signup_token' => '',
+            'signup_token_time' => NULL,
+            'active' => '0',
+        
+        ];
+    }
+
+    /**
      * Appends the given components to the given query, and returns an array of options.
      *
      * The options are:
      *
      * - singleColumn: bool, whether the singleColumn mode was triggered with the Columns component
      *
+     * Available options are:
+     * - whereKeyword: string=where, the where keyword to use in the query.
+     *
      *
      * @param string $q
      * @param array $markers
      * @param array $components
+     * @param array $options
      * @return array
      * @throws \Exception
      */
-    private function fetchRoutine(string &$q, array &$markers, array $components): array
+    protected function fetchRoutine(string &$q, array &$markers, array $components, array $options = []): array
     {
+
+        $whereKeyword = $options['whereKeyword'] ?? 'where';
+
+
         $sWhere = '';
         $sCols = '';
         $sOrderBy = '';
@@ -339,7 +402,9 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
                     $singleColumn = true;
                 }
             } elseif ($component instanceof Where) {
-                SimplePdoWrapper::addWhereSubStmt($sWhere, $markers, $component);
+                SimplePdoWrapper::addWhereSubStmt($sWhere, $markers, $component, [
+                    'whereKeyword' => $whereKeyword,
+                ]);
             } elseif ($component instanceof OrderBy) {
                 $sOrderBy .= PHP_EOL . ' ORDER BY ';
                 $component->apply($sOrderBy);
@@ -355,7 +420,9 @@ class UserApi extends CustomLightKitStoreBaseApi implements UserApiInterface
         }
 
 
-        $q = "select $sCols from `$this->table`";
+        if ('' === $q) {
+            $q = "select $sCols from `$this->table`";
+        }
         if ($sWhere) {
             $q .= $sWhere;
         }

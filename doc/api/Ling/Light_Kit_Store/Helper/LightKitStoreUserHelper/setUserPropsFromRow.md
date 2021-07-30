@@ -53,7 +53,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightKitStoreUserHelper::setUserPropsFromRow](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Helper/LightKitStoreUserHelper.php#L21-L28)
+See the source code for method [LightKitStoreUserHelper::setUserPropsFromRow](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Helper/LightKitStoreUserHelper.php#L24-L31)
 
 
 See Also
@@ -61,5 +61,5 @@ See Also
 
 The [LightKitStoreUserHelper](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreUserHelper.md) class.
 
-
+Next method: [generateUserPassword](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Helper/LightKitStoreUserHelper/generateUserPassword.md)<br>
 

@@ -1,4 +1,4 @@
-Light_Kit_Store:
+Ling.Light_Kit_Store:
     prefix: null
     routes:
         lks_route-home:
@@ -22,3 +22,9 @@ Light_Kit_Store:
         lks_route-404:
             pattern: /404
             controller: Ling\Light_Kit_Store\Controller\Front\Store404Controller->render
+        lks_route-your_new_password:
+            pattern: /your_new_password
+            controller: Ling\Light_Kit_Store\Controller\Front\StoreYourNewPasswordController->render
+        lks_route-search:
+            pattern: /search
+            controller: Ling\Light_Kit_Store\Controller\Front\StoreSearchResultsController->render

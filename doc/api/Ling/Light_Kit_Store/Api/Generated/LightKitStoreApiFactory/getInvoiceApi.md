@@ -46,7 +46,7 @@ Returns [CustomInvoiceApiInterface](https://github.com/lingtalfi/Light_Kit_Store
 
 Source Code
 ===========
-See the source code for method [LightKitStoreApiFactory::getInvoiceApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/LightKitStoreApiFactory.php#L96-L102)
+See the source code for method [LightKitStoreApiFactory::getInvoiceApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/LightKitStoreApiFactory.php#L113-L119)
 
 
 See Also
@@ -54,5 +54,5 @@ See Also
 
 The [LightKitStoreApiFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory.md) class.
 
-Previous method: [getUserHasItemApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/getUserHasItemApi.md)<br>Next method: [getInvoiceLineApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/getInvoiceLineApi.md)<br>
+Previous method: [getUserRatesItemApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/getUserRatesItemApi.md)<br>Next method: [getInvoiceLineApi](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/LightKitStoreApiFactory/getInvoiceLineApi.md)<br>
 

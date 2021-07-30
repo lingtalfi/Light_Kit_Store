@@ -51,7 +51,7 @@ Returns array.
 
 Source Code
 ===========
-See the source code for method [ItemApi::fetch](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/ItemApi.php#L129-L139)
+See the source code for method [ItemApi::fetch](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Generated/Classes/ItemApi.php#L133-L143)
 
 
 See Also

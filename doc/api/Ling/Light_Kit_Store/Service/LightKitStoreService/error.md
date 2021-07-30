@@ -58,7 +58,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::error](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L299-L302)
+See the source code for method [LightKitStoreService::error](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L351-L354)
 
 
 See Also

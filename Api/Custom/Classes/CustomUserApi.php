@@ -3,9 +3,11 @@
 
 namespace Ling\Light_Kit_Store\Api\Custom\Classes;
 
-use Ling\Light_Kit_Store\Api\Generated\Classes\UserApi;
 use Ling\Light_Kit_Store\Api\Custom\Interfaces\CustomUserApiInterface;
-
+use Ling\Light_Kit_Store\Api\Generated\Classes\UserApi;
+use Ling\Light_Kit_Store\Exception\LightKitStoreException;
+use Ling\Light_Kit_Store\Helper\LightKitStorePasswordHelper;
+use Ling\Light_UserManager\Service\LightUserManagerService;
 
 
 /**
@@ -27,20 +29,58 @@ class CustomUserApi extends UserApi implements CustomUserApiInterface
     /**
      * @implementation
      */
-    public function getUserByRememberMeToken(string $rememberMeToken, mixed $default = null, bool $throwNotFoundEx = false)
+    public function getUserByToken(string $token, string $tokenType, mixed $default = null, bool $throwNotFoundEx = false)
     {
-        $ret = $this->pdoWrapper->fetch("select * from `$this->table` where remember_me_token=:token", [
-            "token" => $rememberMeToken,
+
+        switch ($tokenType) {
+            case "remember_me":
+            case "signup":
+            case "reset_password":
+                $col = $tokenType . "_token";
+                break;
+            case "default":
+                $col = "token";
+                break;
+            default:
+                throw new LightKitStoreException("Undefined token type: $tokenType.");
+        }
+
+
+        $ret = $this->pdoWrapper->fetch("select * from `$this->table` where $col=:token", [
+            "token" => $token,
 
         ]);
         if (false === $ret) {
             if (true === $throwNotFoundEx) {
-                throw new \RuntimeException("Row not found with remember_me_token=$rememberMeToken.");
+                throw new \RuntimeException("Row not found with $col=$token.");
             } else {
                 $ret = $default;
             }
         }
         return $ret;
+    }
+
+    /**
+     * @implementation
+     */
+    public function updatePassword(string $newPassword)
+    {
+        /**
+         * @var $_um LightUserManagerService
+         */
+        $_um = $this->container->get("user_manager");
+        $user = $_um->getOpenUser();
+
+
+        if (true === $user->isValid()) {
+            $id = $user->getProp("id");
+
+            $this->updateUserById($id, [
+                "password" => LightKitStorePasswordHelper::encrypt($newPassword),
+            ]);
+        } else {
+            throw new LightKitStoreException("The user is not connected.");
+        }
     }
 
 

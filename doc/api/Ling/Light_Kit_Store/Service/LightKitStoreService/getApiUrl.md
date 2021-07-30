@@ -54,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::getApiUrl](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L199-L214)
+See the source code for method [LightKitStoreService::getApiUrl](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L229-L244)
 
 
 See Also

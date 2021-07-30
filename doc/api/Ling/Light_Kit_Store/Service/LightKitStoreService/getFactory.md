@@ -46,7 +46,7 @@ Returns [CustomLightKitStoreApiFactory](https://github.com/lingtalfi/Light_Kit_S
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::getFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L222-L234)
+See the source code for method [LightKitStoreService::getFactory](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L252-L264)
 
 
 See Also

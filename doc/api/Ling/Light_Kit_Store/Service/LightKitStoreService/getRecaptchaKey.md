@@ -56,7 +56,7 @@ Returns string.
 
 Source Code
 ===========
-See the source code for method [LightKitStoreService::getRecaptchaKey](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L120-L124)
+See the source code for method [LightKitStoreService::getRecaptchaKey](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Service/LightKitStoreService.php#L147-L151)
 
 
 See Also
@@ -64,5 +64,5 @@ See Also
 
 The [LightKitStoreService](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService.md) class.
 
-Previous method: [setOptions](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/setOptions.md)<br>Next method: [generateUserToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/generateUserToken.md)<br>
+Previous method: [getOption](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/getOption.md)<br>Next method: [generateUserToken](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Service/LightKitStoreService/generateUserToken.md)<br>
 

@@ -1,6 +1,6 @@
 Light_Kit_Store, conception notes
 ================
-2021-05-04 -> 2021-06-24
+2021-05-04 -> 2021-07-27
 
 
 
@@ -319,12 +319,12 @@ Implementation wise, we use the reset password tokens from the **lks_user** in t
 
 The database schema explained
 ======
-2021-05-04 -> 2021-06-15
+2021-05-04 -> 2021-06-28
 
 
 
 ### lks_user
-2021-06-15
+2021-06-28
 
 
 I created the user table, with the idea that only a user who bought a product could rate it.
@@ -344,11 +344,29 @@ Here, the **session** is the period during which the **token** is active.
 
 
 
+The **active** column has the following values:
+
+- 0: user not active
+- 1: user active
+- 2: user not active, waiting for signup token click (he just signed up, and now he needs to click the signup token in his email)
+- 3: user not active, waiting for moderation (he just signed up and a human moderator needs to activate his account)
+
+
+
+
+
+
+
+
+
+
 ### lks_item
-2021-05-04 -> 2021-06-15
+2021-05-04 -> 2021-07-19
 
 
 In general the concept of provider/identifier is destined to the **plugin provider** (which provides those identifiers).
+
+The slug
 
 The **provider** column is the actual [dot name](https://github.com/karayabin/universe-snapshot#the-planet-dot-name) of the planet,
 whereas the **identifier** is any string chosen by the provider that identifies the product.
@@ -366,6 +384,126 @@ When that happens, I still want to have my word to say in it. So:
 
 Note: I believe that if I deny a proposed item, I would delete the entry directly, and therefore there is no dedicated status code
 for "denied by the moderator". I can use status=**2** instead, if I want to temporarily put a hold on an item.
+
+
+The **label** is what is displayed to the users on the product pages.
+
+
+The **screenshots** field is a babyYaml array of **visual elements**.
+
+The first entry is the main **visual element** to display on the product lists.
+
+There are different types of **visual element**:
+
+- photo (extension = jpg, png)
+- video (extension = mp4, or youtube videos)
+
+
+
+In parallel of that, we have the following **containing directories**:
+
+- thumb     (photo/video)
+- medium    (photo)
+- large     (photo)
+- video     (video of type mp4)
+- poster    (video)
+
+
+The thumb, medium and large **containing directories** represents an image size, or size range.
+The video **containing directory** is just a container for video files.
+The poster **containing directory** contains the poster images for the videos.
+
+For more details about photo sizes, see the [screenshots](#screenshots) section.
+
+
+
+The files are organized like this:
+
+```txt 
+- libs/universe/Ling/Light_Kit_Store/img/products/$itemId/
+----- thumb:
+--------- test-1.jpg    
+--------- test-23.jpg    
+--------- 2021-07-13-furniture.jpg    
+----- medium: 
+--------- test-1.jpg    
+--------- test-23.jpg    
+----- large:
+--------- test-1.jpg    
+--------- test-23.jpg    
+----- video:
+--------- 2021-07-13-furniture.mp4    
+----- poster:
+--------- 2021-07-13-furniture.jpg    
+```
+
+
+
+
+Convention:
+
+- For a photo:
+    - we use the same [filename](https://github.com/lingtalfi/NotationFan/blob/master/filename-basename.md), and the file must be in all the three **containing directories**: medium, thumb, large.
+    - a photo file must be located at the root of its **containing directory** (i.e., no sub-directories allowed)
+    - in the database we store the path to the "medium" file
+- For a video:
+    - we use the same [basename](https://github.com/lingtalfi/NotationFan/blob/master/filename-basename.md), and the file must be in the following **containing directories**: thumb, poster, video.
+    - in the database we store the path to the "video" file if it's a mp4, or the following syntax for youtube videos:
+        - yt: $youtubeVideoId
+    - the video file must be a mp4 (only recognized format for now), and the thumb and poster must be in jpg
+    - the poster image has a max width of 679px
+    
+
+
+Our system expects the above convention to be met.
+
+So for instance if we have a photo with the url: 
+
+- libs/universe/Ling/Light_Kit_Store/img/products/$itemId/medium/test-1.jpg
+
+Then our system expects that the thumb of this photo is at:
+
+- libs/universe/Ling/Light_Kit_Store/img/products/$itemId/thumb/test-1.jpg
+  
+And that the large version of this photo is at:
+
+- libs/universe/Ling/Light_Kit_Store/img/products/$itemId/large/test-1.jpg
+
+
+There is no double-checking, which means the work of preparing the different photo formats, for instance, must be done BEFORE the product is registered in the database.
+
+
+
+
+
+
+
+
+The **reference** is a unique string that identifies the product, defined by the author. It just serves the purpose of finding a product more quickly.
+
+The **item_type** field can be one of the following:
+
+- 1: website
+
+
+
+
+### lks_user_has_item
+2021-07-02
+
+The **rating** is a number between 1 and 5. If it's null, it means the user hasn't rated the product yet.
+
+
+
+### lks_author
+2021-07-02 -> 2021-07-27
+
+
+The **label** is what is displayed to the users on the product pages.
+
+
+The **author_name** is unique and strlowered for consistency, it's displayed in the url when you search by author.
+
 
 
 
@@ -396,6 +534,16 @@ In the props, we put at least the following:
 
 
 
+Screenshots
+==========
+2021-07-13
+
+
+Each screenshot has the following formats:
+
+- thumb: 40x40 (ratio is ignored)
+- medium: width fixed to 679px (and keep the ratio)  
+- large: any size up to 1500px (i.e., we reduce the largest side to 1500px and keep the ratio)
 
 
 

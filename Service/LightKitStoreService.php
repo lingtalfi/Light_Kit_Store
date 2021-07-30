@@ -7,6 +7,7 @@ namespace Ling\Light_Kit_Store\Service;
 use Ling\Bat\HashTool;
 use Ling\Light\Events\LightEvent;
 use Ling\Light\Exception\LightException;
+use Ling\Light\Helper\ControllerHelper;
 use Ling\Light\Http\HttpRedirectResponse;
 use Ling\Light\ServiceContainer\LightServiceContainerInterface;
 use Ling\Light_Database\Service\LightDatabaseService;
@@ -17,6 +18,7 @@ use Ling\Light_Kit_Store\Helper\LightKitStoreUserHelper;
 use Ling\Light_PasswordProtector\Service\LightPasswordProtector;
 use Ling\Light_ReverseRouter\Service\LightReverseRouterService;
 use Ling\Light_User\LightOpenUser;
+use Ling\Light_User\LightUserInterface;
 
 
 /**
@@ -107,6 +109,31 @@ class LightKitStoreService
 
 
     /**
+     * Returns the option value corresponding to the given key.
+     * If the option is not found, the return depends on the throwEx flag:
+     *
+     * - if set to true, an exception is thrown
+     * - if set to false, the default value is returned
+     *
+     *
+     * @param string $key
+     * @param null $default
+     * @param bool $throwEx
+     */
+    public function getOption(string $key, $default = null, bool $throwEx = false)
+    {
+        if (true === array_key_exists($key, $this->options)) {
+            return $this->options[$key];
+        }
+        if (true === $throwEx) {
+            $this->error("Undefined option: $key.");
+        }
+        return $default;
+    }
+
+
+
+    /**
      * Returns the recaptcha key corresponding to the given project, or an empty string if nothing matches.
      * If isSite is true, the site key is returned, otherwise the secret key is returned.
      *
@@ -120,12 +147,12 @@ class LightKitStoreService
     public function getRecaptchaKey(string $project, bool $isSite = true): string
     {
         $cat = (true === $isSite) ? "site" : "secret";
-        return $this->options["captchaKeys"][$project][$cat] ?? "";
+        return $this->options["captcha_keys"][$project][$cat] ?? "";
     }
 
 
     /**
-     * Generates a login token.
+     * Generates a token.
      *
      * See the @page(Light_Kit_Store conception notes) for more details.
      *
@@ -154,21 +181,24 @@ class LightKitStoreService
      *
      *
      *
-     * @param LightOpenUser $user
+     * @param LightUserInterface $user
      */
-    public function prepareUser(LightOpenUser $user)
+    public function prepareUser(LightUserInterface $user)
     {
-        if (false === $user->isValid()) {
+        if (true === $user instanceof LightOpenUser) {
 
-            $rememberMeToken = LightKitStoreRememberMeHelper::getRememberMeTokenFromCookies();
-            if (null !== $rememberMeToken) {
-                $userRow = LightKitStoreRememberMeHelper::getUserRowByToken($this->container, $rememberMeToken);
+            if (false === $user->isValid()) {
 
-                if (null === $userRow) {
-                    LightKitStoreRememberMeHelper::removeRememberMeTokenFromCookies();
-                } else {
-                    LightKitStoreUserHelper::setUserPropsFromRow($user, $userRow);
-                    $user->connect();
+                $rememberMeToken = LightKitStoreRememberMeHelper::getRememberMeTokenFromCookies();
+                if (null !== $rememberMeToken) {
+                    $userRow = LightKitStoreRememberMeHelper::getUserRowByToken($this->container, $rememberMeToken);
+
+                    if (null === $userRow) {
+                        LightKitStoreRememberMeHelper::removeRememberMeTokenFromCookies();
+                    } else {
+                        LightKitStoreUserHelper::setUserPropsFromRow($user, $userRow);
+                        $user->connect();
+                    }
                 }
             }
         }
@@ -267,19 +297,41 @@ class LightKitStoreService
      */
     public function onLightExceptionCaught(LightEvent $event): void
     {
+
+
         $e = $event->getVar("exception");
         if (true === $e instanceof LightException) {
             if ("404" === $e->getLightErrorCode()) {
-                $redirectRoute = $this->options['notFoundRoute'] ?? null;
-                if (null !== $redirectRoute) {
-                    $urlParams = [];
-                    /**
-                     * @var $rr LightReverseRouterService
-                     */
-                    $rr = $this->container->get("reverse_router");
-                    $url = $rr->getUrl($redirectRoute, $urlParams, true);
-                    $response = HttpRedirectResponse::create($url);
-                    $event->setVar("httpResponse", $response);
+
+
+                /**
+                 * We can either redirect the user to the 404 page, or just render the 404 page in place (keeping the same uri).
+                 *
+                 * For now, we choose the second option.
+                 */
+
+
+                $useRedirect = false;
+                $notFoundRouteName = $this->options['not_found_route'] ?? null;
+
+                if (null !== $notFoundRouteName) {
+
+                    if (false === $useRedirect) {
+                        $response = ControllerHelper::executeControllerByRouteName($notFoundRouteName, $this->container);
+                        $event->setVar("httpResponse", $response);
+
+                    } else {
+
+                        $urlParams = [];
+                        /**
+                         * @var $rr LightReverseRouterService
+                         */
+                        $rr = $this->container->get("reverse_router");
+                        $url = $rr->getUrl($notFoundRouteName, $urlParams, true);
+                        $response = HttpRedirectResponse::create($url);
+                        $event->setVar("httpResponse", $response);
+                    }
+
                 }
             }
         }

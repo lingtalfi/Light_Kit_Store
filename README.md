@@ -1,6 +1,6 @@
 Light_Kit_Store
 ===========
-2021-04-06 -> 2021-06-24
+2021-04-06 -> 2021-07-30
 
 
 
@@ -58,17 +58,15 @@ kit_store:
         setContainer:
             container: @container()
         setOptions:
-            options:
-                captchaKeys: ${kit_store_vars.captcha_keys}
-                notFoundRoute: ${kit_store_vars.not_found_route}
-
+            options: ${kit_store_vars.service_options}
 
 
 kit_store_vars:
-    front_theme: Ling.Light_Kit_Store/theme1
-    not_found_route: lks_route-404
-    captcha_keys: []
-
+    service_options:
+        captcha_keys: []
+        not_found_route: lks_route-404
+    global_vars:
+        front_theme: Ling.Light_Kit_Store/theme1
 
 
 
@@ -80,7 +78,7 @@ $vars.methods_collection:
         method: setVar
         args:
             key: kit_store_vars
-            value: ${kit_store_vars}
+            value: ${kit_store_vars.global_vars}
 
 
 $user_manager.methods_collection:
@@ -90,10 +88,8 @@ $user_manager.methods_collection:
             callback:
                 instance: @service(kit_store)
                 callable_method: prepareUser
-#    -
-#        method: setSessionDuration
-#        args:
-#            sessionTime: 500
+                
+                
 ```
 
 
@@ -102,6 +98,12 @@ History Log
 =============
 
 
+- 0.0.6 -- 2021-07-30
+
+    - update service->prepareUser not accepting non LightOpenUser users
+    - update api to work with Ling.Light_Kit_Editor:0.3.0
+    - checkpoint commit
+  
 - 0.0.5 -- 2021-06-24
 
     - add route to api, and events to register
