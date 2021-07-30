@@ -28,3 +28,8 @@ dependencies:
 
 post_install: 
     map: true
+
+commands: 
+    init1: 
+        - npm install mustache@4.2
+    

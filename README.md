@@ -98,6 +98,10 @@ History Log
 =============
 
 
+- 0.0.7 -- 2021-07-30
+
+    - test commit for dependencies.byml
+
 - 0.0.6 -- 2021-07-30
 
     - update service->prepareUser not accepting non LightOpenUser users
