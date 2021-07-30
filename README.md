@@ -98,6 +98,10 @@ History Log
 =============
 
 
+- 0.0.8 -- 2021-07-30
+
+    - fix dependencies.byml, try cd www first
+
 - 0.0.7 -- 2021-07-30
 
     - test commit for dependencies.byml
