@@ -28,3 +28,16 @@ Ling.Light_Kit_Store:
         lks_route-search:
             pattern: /search
             controller: Ling\Light_Kit_Store\Controller\Front\StoreSearchResultsController->render
+        lks_route-your_account_home:
+            pattern: /your_account
+            controller: Ling\Light_Kit_Store\Controller\Front\Account\YourAccountHomeController->render
+
+        lks_route-product:
+            pattern: /product
+            controller: Ling\Light_Kit_Store\Controller\Front\StoreProductPageController->render
+
+        lks_route-ratings:
+            pattern: /customer-reviews
+            controller: Ling\Light_Kit_Store\Controller\Front\StoreRatingListController->render
+
+

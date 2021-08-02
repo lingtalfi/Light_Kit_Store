@@ -26,6 +26,7 @@ class StoreRatingListController extends StoreProductPageController
     {
 
         $itemId = $request->getGetValue("id") ?? null;
+        $rating = $request->getGetValue("rating") ?? 'all';
         if (null === $itemId) {
             return $this->getRedirectResponse("404");
         }
@@ -40,6 +41,12 @@ class StoreRatingListController extends StoreProductPageController
         }
 
 
+        $ratingFilterMap = $this->getRatingFilterMap();
+        if (false === array_key_exists($rating, $ratingFilterMap)) {
+            $rating = 'all';
+        }
+
+
         return $this->renderPage("Ling.Light_Kit_Store/ratings", [
             "widgetVariables" => [
                 "body.kitstore_ratings" => [
@@ -50,16 +57,9 @@ class StoreRatingListController extends StoreProductPageController
                         "_default" => "Most recent",
                         "ratings" => "Highest rating",
                     ],
-                    "ratingFilter" => "all",
-                    "ratingFilterLabel" => "All stars",
-                    "ratingFilterMap" => [
-                        'all' => 'All stars',
-                        '5' => '5 star only',
-                        '4' => '4 star only',
-                        '3' => '3 star only',
-                        '2' => '2 star only',
-                        '1' => '1 star only',
-                    ],
+                    "ratingFilter" => $rating,
+                    "ratingFilterLabel" => $ratingFilterMap[$rating],
+                    "ratingFilterMap" => $ratingFilterMap,
                 ],
             ],
             "dynamicVariables" => [
@@ -70,9 +70,25 @@ class StoreRatingListController extends StoreProductPageController
 
 
     /**
-     * Renders the rating items.
+     * This returns the array of information about ratings.
      *
      * This is an @page(alcp service).
+     *
+     *
+     * The successful returned array is a @page(list superuseful information) array, plus the following properties:
+     *
+     * - nbRatings: int, the number of ratings returned by the (user driven) query
+     * - nbReviews: int, the number of reviews returned by the (user driven) query
+     * - ratingCrumb: string|int, its value depends on the rating selected by the user:
+     *      - all: 0
+     *      - 1: 1 star
+     *      - 2: 2 star
+     *      - ...
+     *      - 5: 5 star
+     * - rating: string, the rating used.
+     * - sort: string, the sort used.
+     * - html: string, the html to display (we use some template, and for now it's not possible to choose the template flavour)
+     *
      *
      *
      * The input parameters are passed via POST:
@@ -82,14 +98,6 @@ class StoreRatingListController extends StoreProductPageController
      * - search: string=''. An expression to filter the results. We search in the reviews titles and comments. If empty, no filter is applied.
      * - sort: string=_default, the sort used. Can be one of: _default (most recent to oldest), ratings (highest ratings desc)
      * - rating_filter: string=all, can be either the special string "all" for all ratings, or a number from 1 to 5 to filter by the rating.
-     *
-     *
-     *
-     * In case of success, the returned array contains the following properties:
-     *
-     * - html: string, the html representing the customer items
-     * - nbRatings: int, the number of ratings returned by the (user driven) query
-     * - nbReviews: int, the number of reviews returned by the (user driven) query
      *
      *
      * @param HttpRequestInterface $request
@@ -107,21 +115,31 @@ class StoreRatingListController extends StoreProductPageController
         $ratingFilter = $request->getPostValue("rating_filter") ?? "all";
 
 
-        $error = null;
 
+        $ratingFilterMap = $this->getRatingFilterMap();
+        if (false === array_key_exists($ratingFilter, $ratingFilterMap)) {
+            $ratingFilter = 'all';
+        }
+
+        $error = null;
+        $listSuperUsefulInfo = [];
+        $html = '';
         try {
 
 
             $f = $this->getKitStoreService()->getFactory();
             $uriApi = $f->getUserRatesItemApi();
-            $items = $uriApi->getUserRatesItemsListByItemId($itemId, [
+            $listSuperUsefulInfo = $uriApi->getUserRatesItemsListByItemId($itemId, [
                 'search' => $search,
                 'orderBy' => $sort,
                 'page' => $page,
                 'pageLength' => 8,
+                'rating' => $ratingFilter,
             ]);
-
-            az($items);
+            $reviewItems = $listSuperUsefulInfo['rows'];
+            ob_start();
+            require_once $this->getContainer()->getApplicationDir() . "/templates/Ling.Light_Kit_Store/widgets/prototype/inc/review-items.php";
+            $html = ob_get_clean();
 
 
         } catch (\Exception $e) {
@@ -129,9 +147,9 @@ class StoreRatingListController extends StoreProductPageController
             $this->logError($e);
         }
 
-        $html = 0;
-        $nbRatings = 0;
-        $nbReviews = 0;
+
+        $nbRatings = $listSuperUsefulInfo['nbItemsTotal'];
+        $nbReviews = $uriApi->countReviewsByItemId($itemId);
 
 
         if (null !== $error) {
@@ -142,14 +160,42 @@ class StoreRatingListController extends StoreProductPageController
         }
 
 
-        return HttpJsonResponse::create([
+        $ratingCrumb = (int)$ratingFilter;
+        if (0 !== $ratingCrumb) {
+            $ratingCrumb .= " star";
+        }
+
+
+        return HttpJsonResponse::create(array_merge($listSuperUsefulInfo, [
             "type" => "success",
+            "nbRatings" => $nbRatings,
+            "nbReviews" => $nbReviews,
+            "ratingCrumb" => $ratingCrumb,
+            "rating" => $ratingFilter,
+            "sort" => $sort,
             "html" => $html,
-            "nbRatings" => "success",
-            "nbReviews" => "success",
-        ]);
+        ]));
 
 
+    }
+
+    //--------------------------------------------
+    //
+    //--------------------------------------------
+    /**
+     * Returns the rating filter map.
+     * @return array
+     */
+    private function getRatingFilterMap(): array
+    {
+        return [
+            'all' => 'All stars',
+            '5' => '5 star only',
+            '4' => '4 star only',
+            '3' => '3 star only',
+            '2' => '2 star only',
+            '1' => '1 star only',
+        ];
     }
 }
 

@@ -58,7 +58,7 @@ Returns array.
 
 Source Code
 ===========
-See the source code for method [CustomUserRatesItemApi::getCustomUserRatesItemsByItemId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Custom/Classes/CustomUserRatesItemApi.php#L31-L52)
+See the source code for method [CustomUserRatesItemApi::getCustomUserRatesItemsByItemId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/Api/Custom/Classes/CustomUserRatesItemApi.php#L30-L51)
 
 
 See Also

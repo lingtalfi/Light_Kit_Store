@@ -4,7 +4,7 @@
 
 The CustomUserRatesItemApiInterface class
 ================
-2021-04-06 --> 2021-07-30
+2021-04-06 --> 2021-08-02
 
 
 
@@ -27,6 +27,7 @@ abstract class <span class="pl-k">CustomUserRatesItemApiInterface</span> impleme
 - Methods
     - abstract public [getCustomUserRatesItemsByItemId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserRatesItemApiInterface/getCustomUserRatesItemsByItemId.md)(string $itemId, ?array $components = []) : array
     - abstract public [getUserRatesItemsListByItemId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserRatesItemApiInterface/getUserRatesItemsListByItemId.md)(string $itemId, ?array $options = []) : array
+    - abstract public [countReviewsByItemId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserRatesItemApiInterface/countReviewsByItemId.md)(int $itemId) : int
 
 - Inherited methods
     - abstract public [UserRatesItemApiInterface::insertUserRatesItem](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserRatesItemApiInterface/insertUserRatesItem.md)(array $userRatesItem, ?bool $ignoreDuplicate = true, ?bool $returnRic = false) : mixed
@@ -62,6 +63,7 @@ Methods
 
 - [CustomUserRatesItemApiInterface::getCustomUserRatesItemsByItemId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserRatesItemApiInterface/getCustomUserRatesItemsByItemId.md) &ndash; Returns the rows of the lks_user_rates_item matching the given itemId.
 - [CustomUserRatesItemApiInterface::getUserRatesItemsListByItemId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserRatesItemApiInterface/getUserRatesItemsListByItemId.md) &ndash; Returns the [list super useful information](https://github.com/lingtalfi/SqlFiddler/blob/master/doc/pages/conception-notes.md#the-list-super-useful-information) array for item ratings.
+- [CustomUserRatesItemApiInterface::countReviewsByItemId](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Custom/Interfaces/CustomUserRatesItemApiInterface/countReviewsByItemId.md) &ndash; Returns the number of reviews written for the given item.
 - [UserRatesItemApiInterface::insertUserRatesItem](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserRatesItemApiInterface/insertUserRatesItem.md) &ndash; Inserts the given user rates item in the database.
 - [UserRatesItemApiInterface::insertUserRatesItems](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserRatesItemApiInterface/insertUserRatesItems.md) &ndash; Inserts the given user rates item rows in the database.
 - [UserRatesItemApiInterface::fetchAll](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Api/Generated/Interfaces/UserRatesItemApiInterface/fetchAll.md) &ndash; Returns the rows corresponding to given components.

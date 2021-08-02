@@ -3,7 +3,6 @@
 
 namespace Ling\Light_Kit_Store\Api\Custom\Classes;
 
-use Ling\Bat\PsvTool;
 use Ling\Light_Kit_Store\Api\Custom\Interfaces\CustomUserRatesItemApiInterface;
 use Ling\Light_Kit_Store\Api\Generated\Classes\UserRatesItemApi;
 use Ling\SqlFiddler\SqlFiddlerUtil;
@@ -59,10 +58,12 @@ class CustomUserRatesItemApi extends UserRatesItemApi implements CustomUserRates
     public function getUserRatesItemsListByItemId(string $itemId, array $options = []): array
     {
 
+        $itemId = (int)$itemId;
         $search = $options['search'] ?? "";
         $orderBy = $options['orderBy'] ?? "_default";
         $page = $options['page'] ?? 1;
         $pageLength = $options['pageLength'] ?? 50;
+        $rating = $options['rating'] ?? "all";
 
         $u = new SqlFiddlerUtil();
         $orderByMap = [
@@ -79,7 +80,7 @@ class CustomUserRatesItemApi extends UserRatesItemApi implements CustomUserRates
             ->setSearchExpression('(
           h.rating_title like :search or 
           h.rating_comment like :search or 
-          a.label like :search 
+          u.rating_name like :search 
           )', 'search')
             ->setOrderByMap($orderByMap);
 
@@ -94,22 +95,28 @@ class CustomUserRatesItemApi extends UserRatesItemApi implements CustomUserRates
         $orderByReal = $orderByInfo['real'];
 
 
+        $sRating = '';
+        if ('all' !== $rating) {
+            $sRating = " and h.rating = " . (int)$rating;
+        }
+
+
         $q = "
 select 
 
-        h.*, 
-        i.label,
-        a.label as author_label,
-        a.author_name
+        h.*,
+        u.rating_name
 
         -- endselect
 
 from lks_user_rates_item h
-inner join lks_item i on i.id = h.item_id
-inner join lks_author a on a.id = h.user_id
+inner join lks_user u on u.id = h.user_id
 
-where 1
+where 
+      h.item_id=$itemId and
+      h.rating is not null
       and $sSearch
+      $sRating
 
 order by $sOrderBy
 limit 0, 1 -- endlimit
@@ -119,10 +126,33 @@ limit 0, 1 -- endlimit
         ";
 
 
-        $info = $u->fetchAllCountInfo($this->pdoWrapper, $q, $markers, $page, $pageLength, true);
+        $info = $u->fetchAllCountInfo($this->pdoWrapper, $q, $markers, $page, $pageLength);
         $info['orderByPublicMap'] = $orderByPublicMap;
         $info['orderByReal'] = $orderByReal;
         return $info;
+    }
+
+
+    /**
+     * @implementation
+     * @inheritDoc
+     */
+    public function countReviewsByItemId(int $itemId): int
+    {
+        $q = "
+select count(*) as count
+from lks_user_rates_item
+where 
+      item_id=$itemId
+      and rating_comment != ''
+";
+
+        $count = 0;
+        $res = $this->pdoWrapper->fetch($q);
+        if (false !== $res) {
+            $count = (int)$res['count'];
+        }
+        return $count;
     }
 
 

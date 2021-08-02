@@ -1,6 +1,6 @@
 Light_Kit_Store
 ===========
-2021-04-06 -> 2021-07-30
+2021-04-06 -> 2021-08-02
 
 
 
@@ -98,6 +98,10 @@ History Log
 =============
 
 
+- 0.0.9 -- 2021-08-02
+
+    - test commit with hosting_app kaos option
+  
 - 0.0.8 -- 2021-07-30
 
     - fix dependencies.byml, try cd www first

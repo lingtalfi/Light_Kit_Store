@@ -31,5 +31,5 @@ post_install:
 
 commands: 
     init1: 
-        - cd www; npm install mustache@4.2
+        - cd www; npm install bootstrap
     

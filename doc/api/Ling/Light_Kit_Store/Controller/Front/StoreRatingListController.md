@@ -4,7 +4,7 @@
 
 The StoreRatingListController class
 ================
-2021-04-06 --> 2021-07-30
+2021-04-06 --> 2021-08-02
 
 
 
@@ -30,6 +30,7 @@ class <span class="pl-k">StoreRatingListController</span> extends [StoreProductP
 - Methods
     - public [render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreRatingListController/render.md)(Ling\Light\Http\HttpRequestInterface $request) : [HttpResponseInterface](https://github.com/lingtalfi/Light/blob/master/doc/api/Ling/Light/Http/HttpResponseInterface.md)
     - public [renderRatings](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreRatingListController/renderRatings.md)(Ling\Light\Http\HttpRequestInterface $request) : [HttpJsonResponse](https://github.com/lingtalfi/Light/blob/master/doc/api/Ling/Light/Http/HttpJsonResponse.md)
+    - private [getRatingFilterMap](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreRatingListController/getRatingFilterMap.md)() : array
 
 - Inherited methods
     - protected [StoreProductPageController::getItem](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreProductPageController/getItem.md)(int $itemId, ?array $options = []) : array | null
@@ -57,7 +58,8 @@ Methods
 ==============
 
 - [StoreRatingListController::render](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreRatingListController/render.md) &ndash; Renders the home page, and returns the appropriate http response.
-- [StoreRatingListController::renderRatings](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreRatingListController/renderRatings.md) &ndash; Renders the rating items.
+- [StoreRatingListController::renderRatings](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreRatingListController/renderRatings.md) &ndash; This returns the array of information about ratings.
+- [StoreRatingListController::getRatingFilterMap](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreRatingListController/getRatingFilterMap.md) &ndash; Returns the rating filter map.
 - [StoreProductPageController::getItem](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/Front/StoreProductPageController/getItem.md) &ndash; Returns an array of information about the item which id is given, or null if no item was found.
 - [StoreBaseController::renderPage](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController/renderPage.md) &ndash; Renders the given page using the [kit service](https://github.com/lingtalfi/Light_Kit).
 - [StoreBaseController::getLink](https://github.com/lingtalfi/Light_Kit_Store/blob/master/doc/api/Ling/Light_Kit_Store/Controller/StoreBaseController/getLink.md) &ndash; Proxy to the reverse router's getUrl method.

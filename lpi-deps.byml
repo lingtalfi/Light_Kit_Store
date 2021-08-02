@@ -171,3 +171,29 @@
     - Ling:Light_Vars:1.0.8
     - Ling:SimplePdoWrapper:1.30.24
     - Ling:SqlFiddler:1.0.11
+
+0.0.9: 
+    - Ling:BabyYaml:1.7.11
+    - Ling:Bat:1.338
+    - Ling:CliTools:1.10.30
+    - Ling:JAcpHep:1.2.8
+    - Ling:JFormCollect:1.0.8
+    - Ling:Light:0.70.13
+    - Ling:Light_Database:1.14.30
+    - Ling:Light_DatabaseFakeDataMaker:1.0.3
+    - Ling:Light_EasyRoute:1.3.14
+    - Ling:Light_Events:1.10.8
+    - Ling:Light_Kit:1.18.8
+    - Ling:Light_Kit_Editor:0.2.9
+    - Ling:Light_Logger:1.11.11
+    - Ling:Light_MailStats:0.0.3
+    - Ling:Light_Mailer:1.3.20
+    - Ling:Light_PasswordProtector:1.0.7
+    - Ling:Light_PlanetInstaller:2.0.9
+    - Ling:Light_ProjectVars:1.0.1
+    - Ling:Light_ReverseRouter:1.11.7
+    - Ling:Light_User:1.8.0
+    - Ling:Light_UserManager:1.5.16
+    - Ling:Light_Vars:1.0.8
+    - Ling:SimplePdoWrapper:1.30.24
+    - Ling:SqlFiddler:1.0.11
